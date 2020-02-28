@@ -17,7 +17,6 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.scene.text.Text;
 
-
 public class GameApplication extends Application {
     private Image imageBack = new Image("file:/Users/darekmarta/Desktop/Aplikacje Java/Football.jpg");
     private Image playerTeam1 = new Image ("file:/Users/darekmarta/Desktop/Aplikacje Java/red.png");
@@ -55,18 +54,18 @@ public class GameApplication extends Application {
         Text text1 = new Text();
         text.setFill(Color.WHITE);
         text1.setFill(Color.WHITE);
-        Button newBtn = new Button("Press and hover");
+        Button newBtn = new Button("Press to start");
 
-        newBtn.relocate(320, -1);
+        newBtn.relocate(330, -1);
         ball.setFitHeight(15);
         ball.setFitWidth(15);
         ball.relocate(370, 232);
         player1.relocate(60, 228);
         player2.relocate(670, 228);
         goalL.relocate(-26, 179);
-        goalL2.relocate(-26, 242);
+        goalL2.relocate(-26, 243);
         goalR.relocate(717, 179);
-        goalR2.relocate(717, 242);
+        goalR2.relocate(717, 243);
         teamL.relocate(270, 1);
         teamR.relocate(450, 1);
         text.setText("0");
@@ -103,9 +102,10 @@ public class GameApplication extends Application {
                 newBtn.setOnAction(((e)-> {
                     ball.setLayoutX(370);
                     ball.setLayoutY(232);
-                    newBtn.fire();
+                    newBtn.setDefaultButton(true);
+
                 }));
-                if (newBtn.isArmed()){
+                if (newBtn.isDefaultButton()){
                     ball.setLayoutX(ball.getLayoutX() + dx);
                     ball.setLayoutY(ball.getLayoutY() + dy);
                 }
