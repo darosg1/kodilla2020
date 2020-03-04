@@ -120,7 +120,7 @@ public class GameApplication extends Application {
                 }
                 if (ball.getBoundsInParent().intersects(player1.getBoundsInParent())) {
                     dx = -dx;
-                    dy = -dy;
+                    dy = dy;
                 }
                 if (ball.getBoundsInParent().intersects(player2.getBoundsInParent())) {
                     dx = -dx;
