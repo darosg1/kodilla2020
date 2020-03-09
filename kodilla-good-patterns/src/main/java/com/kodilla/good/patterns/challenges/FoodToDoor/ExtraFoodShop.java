@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.challenges.FoodToDoor;
 
 import java.time.LocalDateTime;
 
-public class ExtraFoodShop implements Producer{
+public class ExtraFoodShop implements Producer {
     private String name;
     private String address;
 
@@ -19,7 +19,9 @@ public class ExtraFoodShop implements Producer{
         return address;
     }
 
-    public void process(User user, Product product, LocalDateTime dateOfOrder){
-        System.out.print("\n Zakpuiony towar: " + product.getProductName() + " został przygotowywany do wysyłki");
+    public boolean process(User user, Product product, LocalDateTime dateOfOrder) {
+        System.out.print("Zakupiony w sklepie Extra Food Shop towar: " + product.getProductName() + " został przygotowywany do wysyłki.\n");
+        return true;
     }
 }
+

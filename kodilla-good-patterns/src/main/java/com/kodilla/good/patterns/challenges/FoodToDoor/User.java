@@ -1,7 +1,6 @@
 package com.kodilla.good.patterns.challenges.FoodToDoor;
 
 public class User {
-
     private String firstName;
     private String surname;
     private String userName;

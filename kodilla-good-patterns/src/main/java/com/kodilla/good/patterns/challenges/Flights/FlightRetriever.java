@@ -1,7 +1,7 @@
 package com.kodilla.good.patterns.challenges.Flights;
 
 public class FlightRetriever {
-
+/*
     public FlightRegister retriever() {
         Flights flight1 = new Flights("Warsaw EPWA", "Wroclaw EPWR", 2323);
         Flights flight2 = new Flights("Warsaw EPWA", "Krakow EPKR", 1101);
@@ -15,7 +15,8 @@ public class FlightRetriever {
         Flights flight10 = new Flights("Poznan EPPO", "Wroclaw EPWR", 6760);
 
         FlightRegister flightRegister = new FlightRegister();
-
+    }*/
+}
 
 
 

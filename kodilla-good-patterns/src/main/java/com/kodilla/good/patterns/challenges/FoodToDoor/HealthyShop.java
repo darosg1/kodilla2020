@@ -19,7 +19,8 @@ public class HealthyShop implements Producer{
         return address;
     }
 
-    public void process(User user, Product product, LocalDateTime dateOfOrder){
-        System.out.print("\n Zakpuiony towar: " + product.getProductName() + " został przygotowywany do wysyłki");
+    public boolean process(User user, Product product, LocalDateTime dateOfOrder){
+        System.out.print("Zakupiony w sklepie Healthy Shop towar: " + product.getProductName() + " został przygotowywany do wysyłki.\n");
+        return true;
     }
 }
