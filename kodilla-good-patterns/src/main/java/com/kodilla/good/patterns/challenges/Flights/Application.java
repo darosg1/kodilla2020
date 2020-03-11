@@ -8,7 +8,9 @@ public class Application {
         FlightSearchEngine flightSearchEngine = new FlightSearchEngine(flightRetriever);
 
         List<String> destination = flightSearchEngine.findFlightsFrom("Warsaw EPWA");
-
         System.out.println(destination);
+
+        List<String> destination2 = flightSearchEngine.findFlightsTo("Wroclaw EPWR");
+        System.out.println(destination2);
     }
 }
