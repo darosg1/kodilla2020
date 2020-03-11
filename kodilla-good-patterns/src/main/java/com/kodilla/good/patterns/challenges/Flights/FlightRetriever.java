@@ -29,7 +29,7 @@ public class FlightRetriever {
         allFlights.add(flight9);
         allFlights.add(flight10);
 
-        return allFlights;
+        return allFlights
     }
 }
 
