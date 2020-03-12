@@ -7,10 +7,13 @@ public class Application {
         FlightRetriever flightRetriever = new FlightRetriever();
         FlightSearchEngine flightSearchEngine = new FlightSearchEngine(flightRetriever);
 
-        List<String> destination = flightSearchEngine.findFlightsFrom("Warsaw EPWA");
+        List<Flight> destination = flightSearchEngine.findFlightsFrom("Warsaw EPWA");
         System.out.println(destination);
 
-        List<String> destination2 = flightSearchEngine.findFlightsTo("Wroclaw EPWR");
+        List<Flight> destination2 = flightSearchEngine.findFlightsTo("Wroclaw EPWR");
         System.out.println(destination2);
+
+        List<Flight> destination3 = flightSearchEngine.findFlightsBetween("Warsaw EPWA", "Wroclaw EPWR", "Krakow EPKR");
+        System.out.println(destination3);
     }
 }

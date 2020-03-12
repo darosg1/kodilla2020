@@ -10,22 +10,27 @@ public class FlightSearchEngine {
         this.flightRetriever = flightRetriever;
     }
 
-    public List<String> findFlightsFrom(String cityDeparture) {
+    public List<Flight> findFlightsFrom(String cityDeparture) {
         List<Flight> allFlights = flightRetriever.retrieve();
-        allFlights.stream()
+        return allFlights.stream()
                 .filter(f -> f.getDepartureAirport().equals(cityDeparture))
-                .map(f -> f.toString())
-                .forEach(System.out::println);
-        return new ArrayList<>();
+                .collect(Collectors.toList());
     }
 
-    public List<String> findFlightsTo(String cityArrival) {
+    public List<Flight> findFlightsTo(String cityArrival) {
         List<Flight> allFlights = flightRetriever.retrieve();
-        allFlights.stream()
+        return allFlights.stream()
                 .filter(f -> f.getArrivalAirport().equals(cityArrival))
-                .map(f -> f.toString())
-                .forEach(System.out::println);
-        return new ArrayList<>();
+                .collect(Collectors.toList());
+    }
+
+    public List<Flight> findFlightsBetween(String from, String to, String through) {
+        List<Flight> allFlights = flightRetriever.retrieve();
+        return allFlights.stream()
+                .filter(f -> (f.getDepartureAirport().equals(from) && f.getArrivalAirport().equals(through)
+                        || f.getDepartureAirport().equals(through) && f.getArrivalAirport().equals(to)))
+                .collect(Collectors.toList());
     }
 }
+
 

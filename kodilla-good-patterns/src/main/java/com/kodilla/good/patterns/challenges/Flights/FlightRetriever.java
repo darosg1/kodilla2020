@@ -14,8 +14,8 @@ public class FlightRetriever {
         Flight flight6 = new Flight("Krakow EPKR", "Wroclaw EPWR", 9905);
         Flight flight7 = new Flight("Gdansk EPGD", "Wroclaw EPWR", 7867);
         Flight flight8 = new Flight("Warsaw EPWA", "Wroclaw EPWR", 2324);
-        Flight flight9 = new Flight("Warsaw EPWA", "Poznan EPPO", 4545);
-        Flight flight10 = new Flight("Poznan EPPO", "Wroclaw EPWR", 6760);
+        Flight flight9 = new Flight("Warsaw EPWA", "Krakow EPKR", 4545);
+        Flight flight10 = new Flight("Krakow EPKR", "Wroclaw EPWR", 6760);
 
         List<Flight> allFlights = new ArrayList<>();
         allFlights.add(flight1);
