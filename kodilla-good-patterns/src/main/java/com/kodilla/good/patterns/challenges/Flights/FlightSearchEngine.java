@@ -26,9 +26,13 @@ public class FlightSearchEngine {
 
     public List<Flight> findFlightsBetween(String from, String to, String through) {
         List<Flight> allFlights = flightRetriever.retrieve();
-        return allFlights.stream()
-                .filter(f -> (f.getDepartureAirport().equals(from) && f.getArrivalAirport().equals(through)
-                        || f.getDepartureAirport().equals(through) && f.getArrivalAirport().equals(to)))
+        List<Flight> flightWithStop = allFlights.stream()
+                .filter(f -> f.getDepartureAirport().equals(from) && f.getArrivalAirport().equals(through))
+                .collect(Collectors.toList());
+        allFlights.stream()
+                .filter(f -> f.getDepartureAirport().equals(through) && f.getArrivalAirport().equals(to))
+                .collect(Collectors.toCollection(() -> flightWithStop));
+        return flightWithStop.stream()
                 .collect(Collectors.toList());
     }
 }

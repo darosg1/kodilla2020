@@ -8,12 +8,12 @@ public class Application {
         FlightSearchEngine flightSearchEngine = new FlightSearchEngine(flightRetriever);
 
         List<Flight> destination = flightSearchEngine.findFlightsFrom("Warsaw EPWA");
-        System.out.println(destination);
+        System.out.println("Dostępne loty z Warszawy: " + destination);
 
         List<Flight> destination2 = flightSearchEngine.findFlightsTo("Wroclaw EPWR");
-        System.out.println(destination2);
+        System.out.println("Dostępne loty do Wrocławia: " + destination2);
 
-        List<Flight> destination3 = flightSearchEngine.findFlightsBetween("Warsaw EPWA", "Wroclaw EPWR", "Krakow EPKR");
-        System.out.println(destination3);
+       List<Flight> destination3 = flightSearchEngine.findFlightsBetween("Warsaw EPWA", "Wroclaw EPWR", "Krakow EPKR");
+       System.out.println("Dostępne loty Warszawa-Wrocław z przesiadką w Krakowie: " + destination3);
     }
 }
