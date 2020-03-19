@@ -24,17 +24,19 @@ public class FlightSearchEngine {
                 .collect(Collectors.toList());
     }
 
-    public List<Flight> findFlightsBetween(String from, String to, String through) {
+    public FlightWithStop findFlightsBetween(Flight flightFromToBetween, Flight flightBetweenToTo) {
         List<Flight> allFlights = flightRetriever.retrieve();
-        List<Flight> flightWithStop = allFlights.stream()
-                .filter(f -> f.getDepartureAirport().equals(from) && f.getArrivalAirport().equals(through))
+        allFlights.stream()
+                .filter(f -> f.getDepartureAirport().equals(flightFromToBetween) &&
+                        f.getArrivalAirport().equals(flightFromToBetween))
                 .collect(Collectors.toList());
         allFlights.stream()
-                .filter(f -> f.getDepartureAirport().equals(through) && f.getArrivalAirport().equals(to))
-                .collect(Collectors.toCollection(() -> flightWithStop));
-        return flightWithStop.stream()
+                .filter(f -> f.getDepartureAirport().equals(flightBetweenToTo) &&
+                        f.getArrivalAirport().equals(flightBetweenToTo))
                 .collect(Collectors.toList());
+        return findFlightsBetween ();
     }
 }
+
 
 

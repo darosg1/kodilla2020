@@ -32,20 +32,14 @@ public class BoardTestSuite {
     public void testTaskAdd(){
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.portfolio");
-        //When
         Board board = context.getBean(Board.class);
-
-        ArrayList<String> taskToDoList = (ArrayList<String>)board.getToDoList().getTasks();
-        taskToDoList.add("Task to do list");
-
-        ArrayList<String> taskInProgressList = (ArrayList<String>)board.getInProgressList().getTasks();
-        taskInProgressList.add("Task in progress list");
-
-        ArrayList<String> taskDoneList = (ArrayList<String>)board.getDoneList().getTasks();
-        taskDoneList.add("Task done list");
+        //When
+        board.getToDoList().addTask("Task to do list");
+        board.getInProgressList().addTask("Task in progress list");
+        board.getDoneList().addTask("Task done list");
         //Then
-        Assert.assertEquals("Task to do list", taskToDoList.get(0));
-        Assert.assertEquals("Task in progress list", taskInProgressList.get(0));
-        Assert.assertEquals("Task done list", taskDoneList.get(0));
+        Assert.assertEquals("Task to do list", board.getToDoList().getTask(0));
+        Assert.assertEquals("Task in progress list", board.getInProgressList().getTask(0));
+        Assert.assertEquals("Task done list", board.getDoneList().getTask(0));
     }
 }
