@@ -18,7 +18,7 @@ public class FlightWithStop {
         return flightBetweenToTo;
     }
 
-    public FlightWithStop findFlightWithStop(Flight flightFromToBetween, Flight flightBetweenToTo){
+    public FlightWithStop findFlightWithStop(Flight flightFromToBetween, Flight flightBetweenToTo) {
         return new FlightWithStop (flightFromToBetween, flightBetweenToTo);
     }
 }

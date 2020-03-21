@@ -27,14 +27,14 @@ public class FlightSearchEngine {
     public FlightWithStop findFlightsBetween(Flight flightFromToBetween, Flight flightBetweenToTo) {
         List<Flight> allFlights = flightRetriever.retrieve();
         allFlights.stream()
-                .filter(f -> f.getDepartureAirport().equals(flightFromToBetween) &&
-                        f.getArrivalAirport().equals(flightFromToBetween))
+            .filter(f -> f.getDepartureAirport().equals(flightFromToBetween)
+                        && f.getArrivalAirport().equals(flightFromToBetween)
                 .collect(Collectors.toList());
-        allFlights.stream()
-                .filter(f -> f.getDepartureAirport().equals(flightBetweenToTo) &&
-                        f.getArrivalAirport().equals(flightBetweenToTo))
+         allFlights.stream()
+                .filter(f -> f.getDepartureAirport().equals(flightBetweenToTo.toString()) &&
+                        f.getArrivalAirport().equals(flightBetweenToTo.toString()))
                 .collect(Collectors.toList());
-        return findFlightsBetween ();
+         return new FlightWithStop (flightFromToBetween, flightFromToBetween);
     }
 }
 
