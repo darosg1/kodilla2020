@@ -10,6 +10,7 @@ public final class DrivingTask implements Task{
         this.taskName = taskName;
         this.where = where;
         this.using = using;
+    }
 
     @Override
     public String getTaskName() {
