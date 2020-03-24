@@ -1,5 +1,6 @@
 package com.kodilla.good.patterns.challenges.Flights;
 
+
 public class FlightWithStop {
 
     private Flight flightFromToBetween;
@@ -18,8 +19,18 @@ public class FlightWithStop {
         return flightBetweenToTo;
     }
 
-    public FlightWithStop findFlightWithStop(Flight flightFromToBetween, Flight flightBetweenToTo) {
-        flightBetweenToTo.getDepartureAirport ();
-        return FlightWithStop.;
+    public static FlightWithStop findFlightWithStop(Flight flightFromToBetween, Flight flightBetweenToTo) {
+        return new FlightWithStop (new Flight(flightFromToBetween.getDepartureAirport(),
+                flightFromToBetween.getArrivalAirport(), flightFromToBetween.getFlightNumber()),
+                new Flight (flightBetweenToTo.getDepartureAirport(), flightBetweenToTo.getArrivalAirport(),
+                        flightBetweenToTo.getFlightNumber()));
+    }
+
+    @Override
+    public String toString() {
+        return "FlightWithStop{" +
+                "flightFromToBetween=" + flightFromToBetween +
+                ", flightBetweenToTo=" + flightBetweenToTo +
+                '}';
     }
 }

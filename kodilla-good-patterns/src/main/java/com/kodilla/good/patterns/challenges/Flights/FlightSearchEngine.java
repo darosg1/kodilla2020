@@ -25,17 +25,18 @@ public class FlightSearchEngine {
     }
 
     public FlightWithStop findFlightsBetween(String cityDeparture, String cityArrival, String cityBetween) {
-        List<Flight> allFlights = flightRetriever.retrieve();
-        allFlights.stream()
-            .filter(f -> f.getDepartureAirport().equals(cityDeparture) &&
-                    f.getArrivalAirport().equals (cityBetween) ||
-                    f.getDepartureAirport().equals (cityBetween)&& f.getArrivalAirport().equals(cityArrival))
-                .collect(Collectors.toList());
-         //allFlights.stream()
-           //     .filter(f -> f.getDepartureAirport().equals(flightBetweenToTo.toString()) &&
-             //           f.getArrivalAirport().equals(flightBetweenToTo.toString()))
-               // .collect(Collectors.toList());
-        return new FlightWithStop( new Flight(), new Flight ());
+        List<Flight> allFlights = flightRetriever.retrieve ();
+        allFlights.stream ()
+                .filter ( f -> f.getDepartureAirport().equals(cityDeparture) &&
+                        f.getArrivalAirport().equals(cityBetween) ||
+                        f.getDepartureAirport().equals(cityBetween) && f.getArrivalAirport().equals(cityArrival))
+                        .forEach (System.out::println);
+                 return FlightWithStop.findFlightWithStop (Flight ()), new Flight());
+
+        //allFlights.stream()
+        //     .filter(f -> f.getDepartureAirport().equals(flightBetweenToTo.toString()) &&
+        //           f.getArrivalAirport().equals(flightBetweenToTo.toString()))
+        // .collect(Collectors.toList());
     }
 }
 
