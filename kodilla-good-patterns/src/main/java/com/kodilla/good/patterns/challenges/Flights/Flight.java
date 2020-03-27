@@ -45,7 +45,6 @@ public class Flight {
         return "Lot {" +
                 "departure airport='" + departureAirport + '\'' +
                 ", arrival airport='" + arrivalAirport + '\'' +
-                ", nr flight number=" + flightNumber +
-                 '}';
+                ", nr flight number=" + flightNumber + '}';
     }
 }
