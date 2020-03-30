@@ -13,6 +13,7 @@ public class Application {
         List<Flight> destination2 = flightSearchEngine.findFlightsTo("Wroclaw EPWR");
         System.out.println("Dostępne loty do Wrocławia: " + destination2);
 
-        flightSearchEngine.findFlightsBetween ("Warsaw EPWA", "Wroclaw EPWR", "Krakow EPKR");
+        List<FlightWithStop> destination3 = flightSearchEngine.findFlightsBetween ("Warsaw EPWA", "Wroclaw EPWR", "Krakow EPKR");
+        System.out.println("Dostępne loty z Warszawy do Wrocławia z przesiadką w Krakowie: " + destination3);
     }
 }
