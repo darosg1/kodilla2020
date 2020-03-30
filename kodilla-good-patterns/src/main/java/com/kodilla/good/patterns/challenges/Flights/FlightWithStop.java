@@ -21,9 +21,7 @@ public class FlightWithStop {
 
     @Override
     public String toString() {
-        return "Dostępne loty do Wrocławia z przesiadką w Krakowie{" +
-                "" + flightFromToBetween +
-                "" + flightBetweenToTo +
-                '}';
+        return ""+ flightFromToBetween +
+                "" + flightBetweenToTo;
     }
 }
