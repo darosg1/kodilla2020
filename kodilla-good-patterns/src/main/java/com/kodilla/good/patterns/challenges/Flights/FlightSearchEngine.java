@@ -31,18 +31,20 @@ public class FlightSearchEngine {
 
     public List<FlightWithStop> findFlightsBetween(String cityDeparture , String cityArrival , String cityBetween) {
         List<Flight> allFlights = flightRetriever.retrieve();
+
+        List<FlightWithStop> result = new ArrayList<>();
         for (Flight flightConnection: allFlights) {
                 if (flightConnection.getDepartureAirport().equals(cityDeparture)&&
                         flightConnection.getArrivalAirport().equals(cityBetween)) {
                     for (Flight flightConnection1: allFlights) {
                         if (flightConnection1.getDepartureAirport ().equals ( cityBetween ) &&
                                 flightConnection1.getArrivalAirport ().equals ( cityArrival )) {
-                            flightWithStop1 = new FlightWithStop (flightConnection, flightConnection1);
+                            result.add(new FlightWithStop (flightConnection, flightConnection1));
                         }
                     }
                 }
             }
-       return new ArrayList<> (asList(flightWithStop1));
+       return result;
     }
 }
 

@@ -21,7 +21,7 @@ public class FlightWithStop {
 
     @Override
     public String toString() {
-        return ""+ flightFromToBetween +
-                "" + flightBetweenToTo;
+        return "Odlot "+ flightFromToBetween +
+                " przesiadka " + flightBetweenToTo;
     }
 }

@@ -43,8 +43,8 @@ public class Flight {
     @Override
     public String toString() {
         return "Lot {" +
-                "departure airport='" + departureAirport + '\'' +
-                ", arrival airport='" + arrivalAirport + '\'' +
-                ", nr flight number=" + flightNumber + '}';
+                "lotnisko odlotu='" + departureAirport + '\'' +
+                ", lotnisko przylotu='" + arrivalAirport + '\'' +
+                ", numer lotu=" + flightNumber + '}';
     }
 }
