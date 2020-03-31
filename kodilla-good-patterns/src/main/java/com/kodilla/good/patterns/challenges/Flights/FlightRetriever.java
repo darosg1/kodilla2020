@@ -9,9 +9,9 @@ public class FlightRetriever {
         Flight flight1 = new Flight("Warsaw EPWA", "Wroclaw EPWR", 2323);
         Flight flight2 = new Flight("Warsaw EPWA", "Krakow EPKR", 1101);
         Flight flight3 = new Flight("Warsaw EPWA", "Krakow EPKR", 9090);
-        Flight flight4 = new Flight("Gdansk EPGD", "Krakow EPKR", 9101);
+        Flight flight4 = new Flight("Krakow EPKR", "Wroclaw EPWR", 9905);
         Flight flight5 = new Flight("Krakow EPKR", "Gdansk EPGD", 9102);
-        Flight flight6 = new Flight("Krakow EPKR", "Wroclaw EPWR", 9905);
+        Flight flight6 = new Flight("Gdansk EPGD", "Krakow EPKR", 9101);
         Flight flight7 = new Flight("Gdansk EPGD", "Wroclaw EPWR", 7867);
         Flight flight8 = new Flight("Warsaw EPWA", "Wroclaw EPWR", 2324);
         Flight flight9 = new Flight("Warsaw EPWA", "Krakow EPKR", 4545);
