@@ -1,7 +1,8 @@
-/*package com.kodilla.hibernate.invoice;
+package com.kodilla.hibernate.invoice;
 
 import com.sun.istack.NotNull;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -9,7 +10,7 @@ import java.util.List;
 public class Invoice {
     private int id;
     private String number;
-    private List<Item> items;
+    private List<Item> items = new ArrayList<>();
 
     public Invoice(){
     }
@@ -19,7 +20,7 @@ public class Invoice {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name="ID", unique = true)
+    @Column(name="INVOICE_ID", unique = true)
     public int getId(){
         return id;
     }
@@ -42,8 +43,7 @@ public class Invoice {
     private void setNumber (String number){
         this.number = number;
     }
-    private void setItems (List<Item> items){
+    public void setItems (List<Item> items){
         this.items = items;
     }
 }
-*/

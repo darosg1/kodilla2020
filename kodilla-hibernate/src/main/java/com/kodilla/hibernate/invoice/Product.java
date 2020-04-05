@@ -1,14 +1,15 @@
-/*package com.kodilla.hibernate.invoice;
+package com.kodilla.hibernate.invoice;
 
 import com.sun.istack.NotNull;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="PRODUCTS")
 public class Product {
     private int id;
     private String name;
-    private Item itemList;
+    private List<Item> items;
 
     public Product(){
     }
@@ -19,7 +20,7 @@ public class Product {
     @Id
     @GeneratedValue
     @NotNull
-    @Column (name = "ID", unique = true)
+    @Column (name = "PRODUCT_ID", unique = true)
     public int getId(){
         return id;
     }
@@ -34,8 +35,8 @@ public class Product {
             fetch = FetchType.LAZY
     )
     @Column(name = "ITEMLIST")
-    public Item getItemList(){
-        return itemList;
+    public List<Item> getItems(){
+        return items;
     }
     private void setId(int id){
         this.id = id;
@@ -43,8 +44,7 @@ public class Product {
     private void setName(String name){
         this.name = name;
     }
-    private void setItemList(Item itemList){
-        this.itemList = itemList;
+    public void setItems (List<Item> items){
+        this.items = items;
     }
 }
-*/

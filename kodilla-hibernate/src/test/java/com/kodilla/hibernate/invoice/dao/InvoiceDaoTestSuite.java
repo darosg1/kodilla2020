@@ -1,4 +1,4 @@
-/*package com.kodilla.hibernate.invoice.dao;
+package com.kodilla.hibernate.invoice.dao;
 
 import com.kodilla.hibernate.invoice.Invoice;
 import com.kodilla.hibernate.invoice.Item;
@@ -9,7 +9,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.math.BigDecimal;
 
 @RunWith (SpringRunner.class)
@@ -34,7 +33,6 @@ public class InvoiceDaoTestSuite {
         //Then
         Assert.assertNotEquals (0, invoiceId);
         //CleanUp
-        //invoiceDao.deleteById(id);
+        //invoiceDao.deleteById(invoiceId);
      }
 }
-*/

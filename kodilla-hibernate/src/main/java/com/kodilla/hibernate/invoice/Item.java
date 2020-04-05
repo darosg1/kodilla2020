@@ -1,4 +1,6 @@
-/*package com.kodilla.hibernate.invoice;
+package com.kodilla.hibernate.invoice;
+
+import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -22,12 +24,15 @@ public class Item {
         this.quantity = quantity;
         this.value = value;
     }
-    @Column(name = "ID")
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "ITEM_ID", unique = true)
     public int getId(){
         return id;
     }
-    @ManyToOne
-    @JoinColumn (name = "PRODUCTS")
+    @ManyToOne (cascade = CascadeType.ALL)
+    @JoinColumn (name = "PRODUCT_ID")
     public Product getProduct(){
         return product;
     }
@@ -43,15 +48,15 @@ public class Item {
     public BigDecimal getValue(){
         return value;
     }
-    @ManyToOne
-    @JoinColumn (name = "INVOICES")
+    @ManyToOne (cascade = CascadeType.ALL)
+    @JoinColumn (name = "INVOICE_ID")
     public Invoice getInvoice(){
         return invoice;
     }
     private void setId(int id){
         this.id = id;
     }
-    private void setProduct(Product product){
+    public void setProduct(Product product){
         this.product = product;
     }
     private void setPrice (BigDecimal price){
@@ -63,8 +68,7 @@ public class Item {
     private void setValue (BigDecimal value){
         this.value = value;
     }
-    private void setInvoice(Invoice invoice){
+    public void setInvoice(Invoice invoice){
         this.invoice = invoice;
     }
 }
-*/
