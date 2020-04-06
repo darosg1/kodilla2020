@@ -6,6 +6,12 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery (
+        name = "Company.retrieveNameThreeLettersEqualsTo",
+        query = "SELECT * FROM COMPANIES"
+        + " WHERE SUBSTRING(name, 1, 3)= :SUBSTRING ",
+        resultClass = Employee.class
+)
 @Entity
 @Table(name="COMPANIES")
 public class Company {
@@ -42,7 +48,7 @@ public class Company {
     private void setName(String name){
         this.name = name;
     }
-    private void setEmployees(List<Employee> employees){
+    public void setEmployees(List<Employee> employees){
         this.employees = employees;
     }
 }

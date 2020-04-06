@@ -1,11 +1,14 @@
 package com.kodilla.hibernate.manytomany;
 
 import com.sun.istack.NotNull;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQuery (
+        name = "Employee.retrieveEmployeesByLastname",
+        query = "FROM Employee WHERE lastname = :LASTNAME"
+)
 @Entity
 @Table(name="EMPLOYEES")
 public class Employee {
@@ -54,7 +57,7 @@ public class Employee {
     private void setLastname(String lastname){
         this. lastname = lastname;
     }
-    private void setCompanies(List<Company> companies){
+    public void setCompanies(List<Company> companies){
         this.companies = companies;
     }
 }
