@@ -7,10 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery (
-        name = "Company.retrieveNameThreeLettersEqualsTo",
-        query = "SELECT * FROM COMPANIES"
-        + " WHERE SUBSTRING(name, 1, 3)= :SUBSTRING ",
-        resultClass = Employee.class
+        name = "Company.retrieveCompaniesThreeLettersEqualsTo",
+        query = "SELECT * FROM COMPANIES WHERE SUBSTRING(Company_name, 1, 3)= :SUBSTRING",
+        resultClass = Company.class
 )
 @Entity
 @Table(name="COMPANIES")
