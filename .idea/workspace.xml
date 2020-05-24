@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="57116bbb-3224-4b60-a149-da0db79337d6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/kodilla-pattern2/src/main/java/com/kodilla/pattern2/decorator/pizza/AbstractPizzaOrderDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodilla-pattern2/src/main/java/com/kodilla/pattern2/decorator/taxiportal/AbstractTaxiOrderDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodilla-pattern2/src/main/java/com/kodilla/pattern2/decorator/taxiportal/BasicTaxiOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodilla-pattern2/src/main/java/com/kodilla/pattern2/decorator/taxiportal/ChildSeatDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodilla-pattern2/src/main/java/com/kodilla/pattern2/decorator/taxiportal/TaxiNetworkOrderDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodilla-pattern2/src/test/java/com/kodilla/pattern2/decorator/taxiportal/TaxiOrderTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/invoice/Invoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/invoice/Invoice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/invoice/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/invoice/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/invoice/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/invoice/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/manytomany/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/manytomany/Company.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/manytomany/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/manytomany/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/manytomany/facade/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/manytomany/facade/Facade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/task/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/task/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/tasklist/TaskList.class" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/main/com/kodilla/hibernate/tasklist/TaskList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/test/com/kodilla/hibernate/invoice/dao/InvoiceDaoTestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/test/com/kodilla/hibernate/invoice/dao/InvoiceDaoTestSuite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/test/com/kodilla/hibernate/manytomany/dao/CompanyDaoTestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/test/com/kodilla/hibernate/manytomany/dao/CompanyDaoTestSuite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/test/com/kodilla/hibernate/manytomany/dao/facade/FacadeTestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/test/com/kodilla/hibernate/manytomany/dao/facade/FacadeTestSuite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/test/com/kodilla/hibernate/task/dao/TaskDaoTestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/test/com/kodilla/hibernate/task/dao/TaskDaoTestSuite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/test/com/kodilla/hibernate/task/dao/TaskFinancialDetailsDaoTestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/test/com/kodilla/hibernate/task/dao/TaskFinancialDetailsDaoTestSuite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/test/com/kodilla/hibernate/tasklist/dao/TaskListDaoTestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/classes/java/test/com/kodilla/hibernate/tasklist/dao/TaskListDaoTestSuite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/reports/tests/test/classes/com.kodilla.hibernate.manytomany.dao.facade.FacadeTestSuite.html" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/reports/tests/test/classes/com.kodilla.hibernate.manytomany.dao.facade.FacadeTestSuite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/reports/tests/test/packages/com.kodilla.hibernate.manytomany.dao.facade.html" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/reports/tests/test/packages/com.kodilla.hibernate.manytomany.dao.facade.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/test-results/test/TEST-com.kodilla.hibernate.manytomany.dao.facade.FacadeTestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/test-results/test/TEST-com.kodilla.hibernate.manytomany.dao.facade.FacadeTestSuite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/KodillaHibernateApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/KodillaHibernateApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/dao/InvoiceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/dao/InvoiceDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/dao/ItemDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/dao/ItemDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/dao/ProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/dao/CompanyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/dao/CompanyDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/facade/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/facade/Facade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/task/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/task/dao/TaskDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/task/dao/TaskDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/task/dao/TaskFinancialDetailsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/task/dao/TaskFinancialDetailsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/tasklist/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/java/com/kodilla/hibernate/tasklist/TaskList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/test/java/com/kodilla/hibernate/KodillaHibernateApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/test/java/com/kodilla/hibernate/KodillaHibernateApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/test/java/com/kodilla/hibernate/invoice/dao/InvoiceDaoTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/test/java/com/kodilla/hibernate/invoice/dao/InvoiceDaoTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/test/java/com/kodilla/hibernate/manytomany/dao/CompanyDaoTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/test/java/com/kodilla/hibernate/manytomany/dao/CompanyDaoTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/test/java/com/kodilla/hibernate/manytomany/dao/facade/FacadeTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/test/java/com/kodilla/hibernate/manytomany/dao/facade/FacadeTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/test/java/com/kodilla/hibernate/task/dao/TaskDaoTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/test/java/com/kodilla/hibernate/task/dao/TaskDaoTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/test/java/com/kodilla/hibernate/task/dao/TaskFinancialDetailsDaoTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/test/java/com/kodilla/hibernate/task/dao/TaskFinancialDetailsDaoTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodilla-hibernate/src/test/java/com/kodilla/hibernate/tasklist/dao/TaskListDaoTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/kodilla-hibernate/src/test/java/com/kodilla/hibernate/tasklist/dao/TaskListDaoTestSuite.java" afterDir="false" />
+    </list>
+    <list id="39ea1d85-7afc-401b-98e6-a26c8300a9ee" name="Revert &quot;Exceptions&quot;" comment="Revert &quot;Exceptions&quot;&#10;&#10;This reverts commit 2e274a65" />
+    <list id="f72996ae-cb55-41d7-86dc-ebf0677f8cd4" name="Zadanie 24.1 Fasada" comment="Zadanie 24.1 Fasada&#10;&#10;(cherry picked from commit 7cbdd7ba025557374e84ac5db356aa3ff30c5c7e)">
+      <changelist_data name="darosg1" email="darosg1@yahoo.com" date="1590323620000" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true" />
+  <component name="DependenciesAnalyzeManager">
+    <option name="forwardDirection" value="false" />
+    <option name="includeTests" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$USER_HOME$/Desktop/kodilla2">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/game">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/kodilla-pattern2">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/kodilla-patterns2">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/kodilla-spring-web">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/../kodilla-hibernate">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/game">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/kodilla-patterns2">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="2e274a6562db84ebfeef26ce8dc97afc409b8b32" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/darosg1/kodilla2020.git" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XllhGkFFe8BaPjFbvkdhnJCkLe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="database.data.extractors.current.id" value="Comma-separated (CSV)_id" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/kodilla-patterns/src/test/java/com/kodilla/patterns" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.459268" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.kodilla.good.patterns.challenges.Food2Door" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$USER_HOME$/Desktop/Aplikacje Java" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.PizzaOrderTestSuite.testPizzaWithDoubleCheese">
+    <configuration name="TaxiOrderTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/kodilla-pattern2" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.kodilla.pattern2.decorator.taxiportal.TaxiOrderTestSuite&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PizzaOrderTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kodilla-pattern2.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kodilla.patterns2.decorator.pizza.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.kodilla.patterns2.decorator.pizza" />
+      <option name="MAIN_CLASS_NAME" value="com.kodilla.patterns2.decorator.pizza.PizzaOrderTestSuite" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PizzaOrderTestSuite.testPizzaWithDoubleCheese" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kodilla-pattern2.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kodilla.patterns2.decorator.pizza.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.kodilla.patterns2.decorator.pizza" />
+      <option name="MAIN_CLASS_NAME" value="com.kodilla.patterns2.decorator.pizza.PizzaOrderTestSuite" />
+      <option name="METHOD_NAME" value="testPizzaWithDoubleCheese" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShopServiceTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kodilla-pattern2.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kodilla.pattern2.facade.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.kodilla.pattern2.facade" />
+      <option name="MAIN_CLASS_NAME" value="com.kodilla.pattern2.facade.ShopServiceTestSuite" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaxiOrderTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kodilla-pattern2.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kodilla.pattern2.decorator.taxiportal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.kodilla.pattern2.decorator.taxiportal" />
+      <option name="MAIN_CLASS_NAME" value="com.kodilla.pattern2.decorator.taxiportal.TaxiOrderTestSuite" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="game.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kodilla.game.GameApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KodillaCourseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="kodilla-course.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kodilla.KodillaCourseApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KodillaHibernateApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="kodilla-course.kodilla-hibernate.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kodilla.hibernate.KodillaHibernateApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KodillaPattern2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="kodilla-pattern2.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kodilla.pattern2.KodillaPattern2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KodillaPatterns2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="kodilla-patterns2.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kodilla.patterns2.KodillaPatterns2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KodillaSpringWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="kodilla-spring-web.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kodilla.spring.web.KodillaSpringWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringRunner" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="kodilla-course.kodilla-spring.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kodilla.spring.SpringRunner" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.TaxiOrderTestSuite" />
+      <item itemvalue="JUnit.TaxiOrderTestSuite" />
+      <item itemvalue="JUnit.ShopServiceTestSuite" />
+      <item itemvalue="Spring Boot.GameApplication" />
+      <item itemvalue="Spring Boot.KodillaCourseApplication" />
+      <item itemvalue="Spring Boot.KodillaHibernateApplication" />
+      <item itemvalue="Spring Boot.KodillaPattern2Application" />
+      <item itemvalue="Spring Boot.KodillaPatterns2Application" />
+      <item itemvalue="Spring Boot.KodillaSpringWebApplication" />
+      <item itemvalue="Spring Boot.SpringRunner" />
+      <item itemvalue="JUnit.PizzaOrderTestSuite" />
+      <item itemvalue="JUnit.PizzaOrderTestSuite.testPizzaWithDoubleCheese" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PizzaOrderTestSuite.testPizzaWithDoubleCheese" />
+        <item itemvalue="JUnit.PizzaOrderTestSuite" />
+        <item itemvalue="JUnit.TaxiOrderTestSuite" />
+        <item itemvalue="JUnit.ShopServiceTestSuite" />
+        <item itemvalue="Gradle.TaxiOrderTestSuite" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="57116bbb-3224-4b60-a149-da0db79337d6" name="Default Changelist" comment="" />
+      <created>1581628680226</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581628680226</updated>
+      <workItem from="1581628683922" duration="1019000" />
+      <workItem from="1581778987868" duration="5347000" />
+      <workItem from="1581883184559" duration="1093000" />
+      <workItem from="1581921357580" duration="1483000" />
+      <workItem from="1581927983847" duration="906000" />
+      <workItem from="1581932724851" duration="6338000" />
+      <workItem from="1581949496618" duration="6365000" />
+      <workItem from="1581967496907" duration="1085000" />
+      <workItem from="1582014638642" duration="2200000" />
+      <workItem from="1582036005633" duration="2076000" />
+      <workItem from="1582043688688" duration="11901000" />
+      <workItem from="1582127623291" duration="4831000" />
+      <workItem from="1582136306701" duration="7824000" />
+      <workItem from="1582218415496" duration="8397000" />
+      <workItem from="1582571519722" duration="1640000" />
+      <workItem from="1582649654100" duration="4444000" />
+      <workItem from="1582654531768" duration="371000" />
+      <workItem from="1582729257196" duration="3581000" />
+      <workItem from="1582741002897" duration="2302000" />
+      <workItem from="1582807881774" duration="2860000" />
+      <workItem from="1582821288927" duration="6444000" />
+      <workItem from="1582828860593" duration="559000" />
+      <workItem from="1582829498573" duration="560000" />
+      <workItem from="1582830177871" duration="563000" />
+      <workItem from="1582831519536" duration="1137000" />
+      <workItem from="1582832943616" duration="229000" />
+      <workItem from="1582833205774" duration="159000" />
+      <workItem from="1582833505847" duration="917000" />
+      <workItem from="1582906461821" duration="3626000" />
+      <workItem from="1582912971515" duration="2517000" />
+      <workItem from="1582977092437" duration="896000" />
+      <workItem from="1582999906490" duration="3166000" />
+      <workItem from="1583088529879" duration="382000" />
+      <workItem from="1583233476302" duration="3338000" />
+      <workItem from="1583336119978" duration="1399000" />
+      <workItem from="1583340244800" duration="9615000" />
+      <workItem from="1583429940175" duration="4829000" />
+      <workItem from="1583509047712" duration="11854000" />
+      <workItem from="1583591329047" duration="9933000" />
+      <workItem from="1583653689552" duration="9322000" />
+      <workItem from="1583675346592" duration="13467000" />
+      <workItem from="1583776081517" duration="3869000" />
+      <workItem from="1583856482639" duration="2683000" />
+      <workItem from="1583868035098" duration="3574000" />
+      <workItem from="1583933674066" duration="3702000" />
+      <workItem from="1583944329580" duration="8602000" />
+      <workItem from="1584025539205" duration="11865000" />
+      <workItem from="1584122553278" duration="4588000" />
+      <workItem from="1584200844139" duration="9439000" />
+      <workItem from="1584219883494" duration="607000" />
+      <workItem from="1584275007617" duration="2769000" />
+      <workItem from="1584284472780" duration="18586000" />
+      <workItem from="1584375848576" duration="10020000" />
+      <workItem from="1584460750912" duration="4715000" />
+      <workItem from="1584473288211" duration="4873000" />
+      <workItem from="1584478176759" duration="1805000" />
+      <workItem from="1584521599199" duration="1844000" />
+      <workItem from="1584550966132" duration="9003000" />
+      <workItem from="1584564694261" duration="910000" />
+      <workItem from="1584618189395" duration="2459000" />
+      <workItem from="1584634217171" duration="4355000" />
+      <workItem from="1584722701908" duration="4969000" />
+      <workItem from="1584733300397" duration="6706000" />
+      <workItem from="1584802012244" duration="12521000" />
+      <workItem from="1584878794203" duration="40000" />
+      <workItem from="1584880755445" duration="21903000" />
+      <workItem from="1584982609243" duration="1414000" />
+      <workItem from="1584984348032" duration="12143000" />
+      <workItem from="1585058571762" duration="5086000" />
+      <workItem from="1585072544647" duration="3438000" />
+      <workItem from="1585079091179" duration="6604000" />
+      <workItem from="1585338397407" duration="1376000" />
+      <workItem from="1585339838499" duration="1592000" />
+      <workItem from="1585493611925" duration="13190000" />
+      <workItem from="1585583653812" duration="12483000" />
+      <workItem from="1585647643691" duration="10148000" />
+      <workItem from="1585752305049" duration="568000" />
+      <workItem from="1585754575490" duration="619000" />
+      <workItem from="1585755420905" duration="4053000" />
+      <workItem from="1585832027948" duration="415000" />
+      <workItem from="1585842157412" duration="2514000" />
+      <workItem from="1585850302192" duration="112000" />
+      <workItem from="1585851479290" duration="2393000" />
+      <workItem from="1585859018231" duration="137000" />
+      <workItem from="1585903203252" duration="9584000" />
+      <workItem from="1586003305181" duration="24283000" />
+      <workItem from="1586080328905" duration="9996000" />
+      <workItem from="1586096795069" duration="5803000" />
+      <workItem from="1586104122832" duration="6879000" />
+      <workItem from="1586180739024" duration="7715000" />
+      <workItem from="1586194057003" duration="10337000" />
+      <workItem from="1586205722089" duration="495000" />
+      <workItem from="1586255712813" duration="240000" />
+      <workItem from="1586266658595" duration="1670000" />
+      <workItem from="1586275160114" duration="846000" />
+      <workItem from="1586536704837" duration="122000" />
+      <workItem from="1586538818137" duration="99000" />
+      <workItem from="1586621528509" duration="5427000" />
+      <workItem from="1586690406190" duration="3727000" />
+      <workItem from="1586698933576" duration="8189000" />
+      <workItem from="1586773064409" duration="1963000" />
+      <workItem from="1586781805301" duration="355000" />
+      <workItem from="1586783442512" duration="3605000" />
+      <workItem from="1586792219604" duration="5787000" />
+      <workItem from="1586883638783" duration="1246000" />
+      <workItem from="1587051864446" duration="32000" />
+      <workItem from="1588410733053" duration="243000" />
+      <workItem from="1588410979680" duration="4000" />
+      <workItem from="1588417073093" duration="191000" />
+      <workItem from="1588417487756" duration="63000" />
+      <workItem from="1588434963771" duration="5000" />
+      <workItem from="1589987506121" duration="737000" />
+      <workItem from="1589988303522" duration="1895000" />
+      <workItem from="1589992613931" duration="5189000" />
+      <workItem from="1589999568947" duration="50000" />
+      <workItem from="1589999650661" duration="2405000" />
+      <workItem from="1590002097729" duration="650000" />
+      <workItem from="1590002779858" duration="48000" />
+      <workItem from="1590002856943" duration="1881000" />
+      <workItem from="1590070101204" duration="5555000" />
+      <workItem from="1590076703326" duration="7951000" />
+      <workItem from="1590089568152" duration="128000" />
+      <workItem from="1590089720260" duration="4380000" />
+      <workItem from="1590154243539" duration="315000" />
+      <workItem from="1590154588918" duration="358000" />
+      <workItem from="1590155146497" duration="65000" />
+      <workItem from="1590155231361" duration="1992000" />
+      <workItem from="1590157493613" duration="1166000" />
+      <workItem from="1590159181976" duration="181000" />
+      <workItem from="1590159379607" duration="40000" />
+      <workItem from="1590159423332" duration="54000" />
+      <workItem from="1590159480154" duration="32000" />
+      <workItem from="1590159514987" duration="320000" />
+      <workItem from="1590159898916" duration="44000" />
+      <workItem from="1590159972328" duration="629000" />
+      <workItem from="1590161060383" duration="474000" />
+      <workItem from="1590161618102" duration="604000" />
+      <workItem from="1590162385834" duration="86000" />
+      <workItem from="1590162541189" duration="20000" />
+      <workItem from="1590162589491" duration="315000" />
+      <workItem from="1590162941708" duration="500000" />
+      <workItem from="1590167478835" duration="8431000" />
+      <workItem from="1590218774169" duration="2369000" />
+      <workItem from="1590223029544" duration="684000" />
+      <workItem from="1590257863885" duration="5459000" />
+      <workItem from="1590264533205" duration="1460000" />
+      <workItem from="1590306241973" duration="2177000" />
+      <workItem from="1590308507253" duration="2044000" />
+      <workItem from="1590310878654" duration="6292000" />
+      <workItem from="1590318037454" duration="2602000" />
+      <workItem from="1590320826727" duration="282000" />
+      <workItem from="1590321294103" duration="128000" />
+      <workItem from="1590321480191" duration="294000" />
+      <workItem from="1590321898508" duration="2122000" />
+      <workItem from="1590324223859" duration="2335000" />
+      <workItem from="1590326602456" duration="444000" />
+      <workItem from="1590327076633" duration="1279000" />
+      <workItem from="1590328409263" duration="7905000" />
+      <workItem from="1590340653075" duration="5696000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="BEK_SORT_TYPE" value="1" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="240" y="49" width="646" height="204" key="#Assign_Data_Sources" timestamp="1590322193669">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="240" y="49" key="#Assign_Data_Sources/0.23.1280.715@0.23.1280.715" timestamp="1589998293799" />
+    <state x="240" y="49" width="646" height="204" key="#Assign_Data_Sources/0.23.1280.716@0.23.1280.716" timestamp="1590322193669" />
+    <state x="240" y="49" key="#Assign_Data_Sources/0.23.1280.721@0.23.1280.721" timestamp="1590223720937" />
+    <state x="240" y="49" key="#Assign_Data_Sources/0.23.1280.722@0.23.1280.722" timestamp="1586205467403" />
+    <state x="503" y="356" key="#Custom_Plugin_Repositories" timestamp="1589997661458">
+      <screen x="0" y="23" width="1280" height="715" />
+    </state>
+    <state x="503" y="356" key="#Custom_Plugin_Repositories/0.23.1280.715@0.23.1280.715" timestamp="1589997661458" />
+    <state x="290" y="23" key="#IndexExceptionRunner" timestamp="1589988658498">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="290" y="23" key="#IndexExceptionRunner/0.23.1280.716@0.23.1280.716" timestamp="1589988658498" />
+    <state x="274" y="69" key="#Inspections" timestamp="1590308743621">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="274" y="69" key="#Inspections/0.23.1280.716@0.23.1280.716" timestamp="1590308743621" />
+    <state x="274" y="69" key="#Inspections/0.23.1280.721@0.23.1280.721" timestamp="1590088016825" />
+    <state x="197" y="23" key="#Java" timestamp="1590325315678">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="197" y="23" key="#Java/0.23.1280.716@0.23.1280.716" timestamp="1590325315678" />
+    <state x="523" y="246" key="#Notifications" timestamp="1590327917831">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="523" y="246" key="#Notifications/0.23.1280.715@0.23.1280.715" timestamp="1589994650769" />
+    <state x="523" y="246" key="#Notifications/0.23.1280.716@0.23.1280.716" timestamp="1590327917831" />
+    <state x="239" y="23" key="#Project_Structure" timestamp="1590324292769">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="240" y="38" key="#Project_Structure/0.23.1280.713@0.23.1280.713" timestamp="1584726924073" />
+    <state x="240" y="23" key="#Project_Structure/0.23.1280.715@0.23.1280.715" timestamp="1590005540764" />
+    <state x="239" y="23" key="#Project_Structure/0.23.1280.716@0.23.1280.716" timestamp="1590324292769" />
+    <state x="240" y="38" key="#Project_Structure/0.23.1280.720@0.23.1280.720" timestamp="1583939708917" />
+    <state x="240" y="23" key="#Project_Structure/0.23.1280.721@0.23.1280.721" timestamp="1590321389935" />
+    <state x="240" y="41" key="#SQL_Dialects" timestamp="1586204281700">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="240" y="41" key="#SQL_Dialects/0.23.1280.722@0.23.1280.722" timestamp="1586204281700" />
+    <state x="326" y="23" key="#ShopServiceTestSuite" timestamp="1590091055728">
+      <screen x="0" y="23" width="1280" height="721" />
+    </state>
+    <state x="326" y="23" key="#ShopServiceTestSuite/0.23.1280.721@0.23.1280.721" timestamp="1590091055728" />
+    <state x="238" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590322536417">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="238" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.716@0.23.1280.716" timestamp="1590322536417" />
+    <state x="240" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.721@0.23.1280.721" timestamp="1586267250368" />
+    <state x="240" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.722@0.23.1280.722" timestamp="1586205382728" />
+    <state x="100" y="122" width="1080" height="503" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1590317387899">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="100" y="122" width="1080" height="503" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1280.716@0.23.1280.716" timestamp="1590317387899" />
+    <state x="100" y="123" width="1080" height="506" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1280.721@0.23.1280.721" timestamp="1586111002894" />
+    <state x="100" y="123" width="1080" height="507" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1280.722@0.23.1280.722" timestamp="1586198995977" />
+    <state x="453" y="93" key="#com.intellij.ide.util.MemberChooser" timestamp="1590344614739">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="453" y="92" key="#com.intellij.ide.util.MemberChooser/0.23.1280.713@0.23.1280.713" timestamp="1584997123674" />
+    <state x="453" y="93" key="#com.intellij.ide.util.MemberChooser/0.23.1280.715@0.23.1280.715" timestamp="1584802584597" />
+    <state x="453" y="93" key="#com.intellij.ide.util.MemberChooser/0.23.1280.716@0.23.1280.716" timestamp="1590344614739" />
+    <state x="453" y="93" key="#com.intellij.ide.util.MemberChooser/0.23.1280.719@0.23.1280.719" timestamp="1583777675570" />
+    <state x="453" y="93" key="#com.intellij.ide.util.MemberChooser/0.23.1280.720@0.23.1280.720" timestamp="1583868419132" />
+    <state x="453" y="93" key="#com.intellij.ide.util.MemberChooser/0.23.1280.721@0.23.1280.721" timestamp="1586797529815" />
+    <state x="453" y="93" key="#com.intellij.ide.util.MemberChooser/0.23.1280.723@0.23.1280.723" timestamp="1585933721085" />
+    <state x="256" y="77" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1590162426189">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="256" y="77" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.23.1280.716@0.23.1280.716" timestamp="1590162426189" />
+    <state x="161" y="303" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1590324325301">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="176" y="302" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.1280.713@0.23.1280.713" timestamp="1584898217713" />
+    <state x="161" y="303" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.1280.716@0.23.1280.716" timestamp="1590324325301" />
+    <state x="176" y="305" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.1280.720@0.23.1280.720" timestamp="1583342602755" />
+    <state x="317" y="236" width="645" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584725002833">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state x="317" y="236" width="645" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1280.713@0.23.1280.713" timestamp="1584725002833" />
+    <state x="317" y="238" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1280.719@0.23.1280.719" timestamp="1583777068285" />
+    <state x="317" y="239" width="645" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1280.720@0.23.1280.720" timestamp="1583509798687" />
+    <state x="317" y="239" width="645" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1280.721@0.23.1280.721" timestamp="1583661225391" />
+    <state x="315" y="260" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1584724978560">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state x="315" y="260" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.23.1280.713@0.23.1280.713" timestamp="1584724978560" />
+    <state x="317" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583654401622">
+      <screen x="0" y="23" width="1280" height="721" />
+    </state>
+    <state x="317" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1280.721@0.23.1280.721" timestamp="1583654401622" />
+    <state x="378" y="126" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586774535048">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="378" y="126" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.715@0.23.1280.715" timestamp="1584303427497" />
+    <state x="378" y="126" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.716@0.23.1280.716" timestamp="1586774535048" />
+    <state x="378" y="127" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.720@0.23.1280.720" timestamp="1583439024602" />
+    <state x="378" y="127" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.721@0.23.1280.721" timestamp="1586017298033" />
+    <state x="376" y="131" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1585510171246">
+      <screen x="0" y="23" width="1280" height="721" />
+    </state>
+    <state x="376" y="131" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.23.1280.721@0.23.1280.721" timestamp="1585510171246" />
+    <state x="371" y="236" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1590162281807">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="371" y="235" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1280.715@0.23.1280.715" timestamp="1590002498978" />
+    <state x="371" y="236" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1280.716@0.23.1280.716" timestamp="1590162281807" />
+    <state x="371" y="236" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1280.720@0.23.1280.720" timestamp="1581934106474" />
+    <state x="371" y="237" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1280.721@0.23.1280.721" timestamp="1590087870225" />
+    <state x="172" y="23" key="CommitChangelistDialog2" timestamp="1590328304209">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="172" y="23" key="CommitChangelistDialog2/0.23.1280.716@0.23.1280.716" timestamp="1590328304209" />
+    <state x="172" y="23" key="CommitChangelistDialog2/0.23.1280.721@0.23.1280.721" timestamp="1589990400113" />
+    <state x="172" y="23" key="CommitChangelistDialog2/0.23.1280.723@0.23.1280.723" timestamp="1589990305127" />
+    <state x="99" y="122" width="1080" height="506" key="DiffContextDialog" timestamp="1590328359670">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="100" y="123" width="1080" height="506" key="DiffContextDialog/0.23.1280.715@0.23.1280.715" timestamp="1589994868044" />
+    <state x="99" y="122" width="1080" height="506" key="DiffContextDialog/0.23.1280.716@0.23.1280.716" timestamp="1590328359670" />
+    <state x="100" y="124" width="1080" height="510" key="DiffContextDialog/0.23.1280.721@0.23.1280.721" timestamp="1590091676126" />
+    <state width="1238" height="255" key="GridCell.Tab.0.bottom" timestamp="1590347548387">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state width="1238" height="204" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1586007482607" />
+    <state width="1218" height="205" key="GridCell.Tab.0.bottom/0.23.1280.713@0.23.1280.713" timestamp="1585072378233" />
+    <state width="1238" height="174" key="GridCell.Tab.0.bottom/0.23.1280.715@0.23.1280.715" timestamp="1590005439700" />
+    <state width="1238" height="255" key="GridCell.Tab.0.bottom/0.23.1280.716@0.23.1280.716" timestamp="1590347548387" />
+    <state width="1218" height="254" key="GridCell.Tab.0.bottom/0.23.1280.719@0.23.1280.719" timestamp="1583781938543" />
+    <state width="1238" height="205" key="GridCell.Tab.0.bottom/0.23.1280.720@0.23.1280.720" timestamp="1585856951147" />
+    <state width="1238" height="255" key="GridCell.Tab.0.bottom/0.23.1280.721@0.23.1280.721" timestamp="1590321110108" />
+    <state width="1238" height="198" key="GridCell.Tab.0.bottom/0.23.1280.722@0.23.1280.722" timestamp="1586205676846" />
+    <state width="846" height="201" key="GridCell.Tab.0.bottom/0.23.1280.723@0.23.1280.723" timestamp="1590308012379" />
+    <state width="1238" height="174" key="GridCell.Tab.0.bottom/0.23.1280.724@0.23.1280.724" timestamp="1589989512435" />
+    <state width="1218" height="166" key="GridCell.Tab.0.bottom/0.23.1280.726@0.23.1280.726" timestamp="1581781065571" />
+    <state width="1218" height="115" key="GridCell.Tab.0.bottom/0.23.1280.727@0.23.1280.727" timestamp="1581786238217" />
+    <state width="1238" height="255" key="GridCell.Tab.0.center" timestamp="1590347548386">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state width="1238" height="204" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1586007482606" />
+    <state width="1218" height="205" key="GridCell.Tab.0.center/0.23.1280.713@0.23.1280.713" timestamp="1585072378232" />
+    <state width="1238" height="174" key="GridCell.Tab.0.center/0.23.1280.715@0.23.1280.715" timestamp="1590005439699" />
+    <state width="1238" height="255" key="GridCell.Tab.0.center/0.23.1280.716@0.23.1280.716" timestamp="1590347548386" />
+    <state width="1218" height="254" key="GridCell.Tab.0.center/0.23.1280.719@0.23.1280.719" timestamp="1583781938542" />
+    <state width="1238" height="205" key="GridCell.Tab.0.center/0.23.1280.720@0.23.1280.720" timestamp="1585856951146" />
+    <state width="1238" height="255" key="GridCell.Tab.0.center/0.23.1280.721@0.23.1280.721" timestamp="1590321110107" />
+    <state width="1238" height="198" key="GridCell.Tab.0.center/0.23.1280.722@0.23.1280.722" timestamp="1586205676846" />
+    <state width="846" height="201" key="GridCell.Tab.0.center/0.23.1280.723@0.23.1280.723" timestamp="1590308012378" />
+    <state width="1238" height="174" key="GridCell.Tab.0.center/0.23.1280.724@0.23.1280.724" timestamp="1589989512434" />
+    <state width="1218" height="166" key="GridCell.Tab.0.center/0.23.1280.726@0.23.1280.726" timestamp="1581781065570" />
+    <state width="1218" height="115" key="GridCell.Tab.0.center/0.23.1280.727@0.23.1280.727" timestamp="1581786238216" />
+    <state width="1238" height="255" key="GridCell.Tab.0.left" timestamp="1590347548386">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state width="1238" height="204" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1586007482605" />
+    <state width="1218" height="205" key="GridCell.Tab.0.left/0.23.1280.713@0.23.1280.713" timestamp="1585072378231" />
+    <state width="1238" height="174" key="GridCell.Tab.0.left/0.23.1280.715@0.23.1280.715" timestamp="1590005439698" />
+    <state width="1238" height="255" key="GridCell.Tab.0.left/0.23.1280.716@0.23.1280.716" timestamp="1590347548386" />
+    <state width="1218" height="254" key="GridCell.Tab.0.left/0.23.1280.719@0.23.1280.719" timestamp="1583781938541" />
+    <state width="1238" height="205" key="GridCell.Tab.0.left/0.23.1280.720@0.23.1280.720" timestamp="1585856951146" />
+    <state width="1238" height="255" key="GridCell.Tab.0.left/0.23.1280.721@0.23.1280.721" timestamp="1590321110107" />
+    <state width="1238" height="198" key="GridCell.Tab.0.left/0.23.1280.722@0.23.1280.722" timestamp="1586205676845" />
+    <state width="846" height="201" key="GridCell.Tab.0.left/0.23.1280.723@0.23.1280.723" timestamp="1590308012378" />
+    <state width="1238" height="174" key="GridCell.Tab.0.left/0.23.1280.724@0.23.1280.724" timestamp="1589989512434" />
+    <state width="1218" height="166" key="GridCell.Tab.0.left/0.23.1280.726@0.23.1280.726" timestamp="1581781065569" />
+    <state width="1218" height="115" key="GridCell.Tab.0.left/0.23.1280.727@0.23.1280.727" timestamp="1581786238216" />
+    <state width="1238" height="255" key="GridCell.Tab.0.right" timestamp="1590347548387">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state width="1238" height="204" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1586007482607" />
+    <state width="1218" height="205" key="GridCell.Tab.0.right/0.23.1280.713@0.23.1280.713" timestamp="1585072378232" />
+    <state width="1238" height="174" key="GridCell.Tab.0.right/0.23.1280.715@0.23.1280.715" timestamp="1590005439699" />
+    <state width="1238" height="255" key="GridCell.Tab.0.right/0.23.1280.716@0.23.1280.716" timestamp="1590347548387" />
+    <state width="1218" height="254" key="GridCell.Tab.0.right/0.23.1280.719@0.23.1280.719" timestamp="1583781938543" />
+    <state width="1238" height="205" key="GridCell.Tab.0.right/0.23.1280.720@0.23.1280.720" timestamp="1585856951146" />
+    <state width="1238" height="255" key="GridCell.Tab.0.right/0.23.1280.721@0.23.1280.721" timestamp="1590321110108" />
+    <state width="1238" height="198" key="GridCell.Tab.0.right/0.23.1280.722@0.23.1280.722" timestamp="1586205676846" />
+    <state width="846" height="201" key="GridCell.Tab.0.right/0.23.1280.723@0.23.1280.723" timestamp="1590308012379" />
+    <state width="1238" height="174" key="GridCell.Tab.0.right/0.23.1280.724@0.23.1280.724" timestamp="1589989512435" />
+    <state width="1218" height="166" key="GridCell.Tab.0.right/0.23.1280.726@0.23.1280.726" timestamp="1581781065571" />
+    <state width="1218" height="115" key="GridCell.Tab.0.right/0.23.1280.727@0.23.1280.727" timestamp="1581786238217" />
+    <state width="1238" height="236" key="GridCell.Tab.1.bottom" timestamp="1590337345642">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state width="1218" height="165" key="GridCell.Tab.1.bottom/0.23.1280.713@0.23.1280.713" timestamp="1583947557667" />
+    <state width="1238" height="216" key="GridCell.Tab.1.bottom/0.23.1280.715@0.23.1280.715" timestamp="1590002756550" />
+    <state width="1238" height="236" key="GridCell.Tab.1.bottom/0.23.1280.716@0.23.1280.716" timestamp="1590337345642" />
+    <state width="1218" height="213" key="GridCell.Tab.1.bottom/0.23.1280.720@0.23.1280.720" timestamp="1583934307648" />
+    <state width="846" height="201" key="GridCell.Tab.1.bottom/0.23.1280.721@0.23.1280.721" timestamp="1590308259628" />
+    <state width="846" height="201" key="GridCell.Tab.1.bottom/0.23.1280.723@0.23.1280.723" timestamp="1590308012381" />
+    <state width="1238" height="236" key="GridCell.Tab.1.center" timestamp="1590337345642">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state width="1218" height="165" key="GridCell.Tab.1.center/0.23.1280.713@0.23.1280.713" timestamp="1583947557665" />
+    <state width="1238" height="216" key="GridCell.Tab.1.center/0.23.1280.715@0.23.1280.715" timestamp="1590002756549" />
+    <state width="1238" height="236" key="GridCell.Tab.1.center/0.23.1280.716@0.23.1280.716" timestamp="1590337345642" />
+    <state width="1218" height="213" key="GridCell.Tab.1.center/0.23.1280.720@0.23.1280.720" timestamp="1583934307646" />
+    <state width="846" height="201" key="GridCell.Tab.1.center/0.23.1280.721@0.23.1280.721" timestamp="1590308259627" />
+    <state width="846" height="201" key="GridCell.Tab.1.center/0.23.1280.723@0.23.1280.723" timestamp="1590308012380" />
+    <state width="1238" height="236" key="GridCell.Tab.1.left" timestamp="1590337345641">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state width="1218" height="165" key="GridCell.Tab.1.left/0.23.1280.713@0.23.1280.713" timestamp="1583947557665" />
+    <state width="1238" height="216" key="GridCell.Tab.1.left/0.23.1280.715@0.23.1280.715" timestamp="1590002756548" />
+    <state width="1238" height="236" key="GridCell.Tab.1.left/0.23.1280.716@0.23.1280.716" timestamp="1590337345641" />
+    <state width="1218" height="213" key="GridCell.Tab.1.left/0.23.1280.720@0.23.1280.720" timestamp="1583934307645" />
+    <state width="846" height="201" key="GridCell.Tab.1.left/0.23.1280.721@0.23.1280.721" timestamp="1590308259627" />
+    <state width="846" height="201" key="GridCell.Tab.1.left/0.23.1280.723@0.23.1280.723" timestamp="1590308012379" />
+    <state width="1238" height="236" key="GridCell.Tab.1.right" timestamp="1590337345642">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state width="1218" height="165" key="GridCell.Tab.1.right/0.23.1280.713@0.23.1280.713" timestamp="1583947557666" />
+    <state width="1238" height="216" key="GridCell.Tab.1.right/0.23.1280.715@0.23.1280.715" timestamp="1590002756549" />
+    <state width="1238" height="236" key="GridCell.Tab.1.right/0.23.1280.716@0.23.1280.716" timestamp="1590337345642" />
+    <state width="1218" height="213" key="GridCell.Tab.1.right/0.23.1280.720@0.23.1280.720" timestamp="1583934307647" />
+    <state width="846" height="201" key="GridCell.Tab.1.right/0.23.1280.721@0.23.1280.721" timestamp="1590308259628" />
+    <state width="846" height="201" key="GridCell.Tab.1.right/0.23.1280.723@0.23.1280.723" timestamp="1590308012380" />
+    <state width="1010" height="201" key="GridCell.Tab.2.bottom" timestamp="1590323577963">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state width="846" height="174" key="GridCell.Tab.2.bottom/0.23.1280.715@0.23.1280.715" timestamp="1589999540658" />
+    <state width="1010" height="201" key="GridCell.Tab.2.bottom/0.23.1280.716@0.23.1280.716" timestamp="1590323577963" />
+    <state width="846" height="201" key="GridCell.Tab.2.bottom/0.23.1280.721@0.23.1280.721" timestamp="1590308119267" />
+    <state width="846" height="174" key="GridCell.Tab.2.bottom/0.23.1280.723@0.23.1280.723" timestamp="1589990251288" />
+    <state width="1010" height="201" key="GridCell.Tab.2.center" timestamp="1590323577962">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state width="846" height="174" key="GridCell.Tab.2.center/0.23.1280.715@0.23.1280.715" timestamp="1589999540657" />
+    <state width="1010" height="201" key="GridCell.Tab.2.center/0.23.1280.716@0.23.1280.716" timestamp="1590323577962" />
+    <state width="846" height="201" key="GridCell.Tab.2.center/0.23.1280.721@0.23.1280.721" timestamp="1590308119266" />
+    <state width="846" height="174" key="GridCell.Tab.2.center/0.23.1280.723@0.23.1280.723" timestamp="1589990251287" />
+    <state width="1010" height="201" key="GridCell.Tab.2.left" timestamp="1590323577961">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state width="846" height="174" key="GridCell.Tab.2.left/0.23.1280.715@0.23.1280.715" timestamp="1589999540657" />
+    <state width="1010" height="201" key="GridCell.Tab.2.left/0.23.1280.716@0.23.1280.716" timestamp="1590323577961" />
+    <state width="846" height="201" key="GridCell.Tab.2.left/0.23.1280.721@0.23.1280.721" timestamp="1590308119266" />
+    <state width="846" height="174" key="GridCell.Tab.2.left/0.23.1280.723@0.23.1280.723" timestamp="1589990251286" />
+    <state width="1010" height="201" key="GridCell.Tab.2.right" timestamp="1590323577962">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state width="846" height="174" key="GridCell.Tab.2.right/0.23.1280.715@0.23.1280.715" timestamp="1589999540657" />
+    <state width="1010" height="201" key="GridCell.Tab.2.right/0.23.1280.716@0.23.1280.716" timestamp="1590323577962" />
+    <state width="846" height="201" key="GridCell.Tab.2.right/0.23.1280.721@0.23.1280.721" timestamp="1590308119267" />
+    <state width="846" height="174" key="GridCell.Tab.2.right/0.23.1280.723@0.23.1280.723" timestamp="1589990251287" />
+    <state width="252" height="457" key="HiddenNamespacesPopup" timestamp="1590322554916">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state width="252" height="457" key="HiddenNamespacesPopup/0.23.1280.716@0.23.1280.716" timestamp="1590322554916" />
+    <state x="128" y="87" key="MergeDialog" timestamp="1590326543186">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="128" y="87" key="MergeDialog/0.23.1280.716@0.23.1280.716" timestamp="1590326543186" />
+    <state x="521" y="249" width="238" height="270" key="MultipleFileMergeDialog" timestamp="1590326553437">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="521" y="249" width="238" height="270" key="MultipleFileMergeDialog/0.23.1280.716@0.23.1280.716" timestamp="1590326553437" />
+    <state x="338" y="85" key="RollbackChangesDialog" timestamp="1590325953885">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="338" y="85" key="RollbackChangesDialog/0.23.1280.715@0.23.1280.715" timestamp="1589998025024" />
+    <state x="338" y="85" key="RollbackChangesDialog/0.23.1280.716@0.23.1280.716" timestamp="1590325953885" />
+    <state x="338" y="86" key="RollbackChangesDialog/0.23.1280.723@0.23.1280.723" timestamp="1589990275572" />
+    <state x="98" y="23" width="997" height="716" key="SettingsEditor" timestamp="1590334909561">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="98" y="23" width="997" height="715" key="SettingsEditor/0.23.1280.715@0.23.1280.715" timestamp="1590002828494" />
+    <state x="98" y="23" width="997" height="716" key="SettingsEditor/0.23.1280.716@0.23.1280.716" timestamp="1590334909561" />
+    <state x="98" y="23" width="997" height="721" key="SettingsEditor/0.23.1280.721@0.23.1280.721" timestamp="1590320856660" />
+    <state x="100" y="123" width="1080" height="505" key="ShowDiffWithBranchDialog" timestamp="1590321776827">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="100" y="123" width="1080" height="505" key="ShowDiffWithBranchDialog/0.23.1280.716@0.23.1280.716" timestamp="1590321776827" />
+    <state x="100" y="123" width="1080" height="505" key="ShowDiffWithBranchDialog/0.23.1280.721@0.23.1280.721" timestamp="1590321110222" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1584294590804">
+      <screen x="0" y="23" width="1280" height="715" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.23.1280.715@0.23.1280.715" timestamp="1584294590804" />
+    <state x="240" y="115" key="Vcs.Push.Dialog.v2" timestamp="1590327872290">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="240" y="115" key="Vcs.Push.Dialog.v2/0.23.1280.716@0.23.1280.716" timestamp="1590327872290" />
+    <state x="387" y="117" key="VcsDiffUtil.ChangesDialog" timestamp="1590327989926">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="387" y="117" key="VcsDiffUtil.ChangesDialog/0.23.1280.715@0.23.1280.715" timestamp="1589998079707" />
+    <state x="387" y="117" key="VcsDiffUtil.ChangesDialog/0.23.1280.716@0.23.1280.716" timestamp="1590327989926" />
+    <state x="423" y="161" key="chooseDestDirectoryDialog" timestamp="1584726996990">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state x="423" y="161" key="chooseDestDirectoryDialog/0.23.1280.713@0.23.1280.713" timestamp="1584726996990" />
+    <state x="423" y="162" key="chooseDestDirectoryDialog/0.23.1280.720@0.23.1280.720" timestamp="1583940808519" />
+    <state x="423" y="162" key="chooseDestDirectoryDialog/0.23.1280.721@0.23.1280.721" timestamp="1583658967804" />
+    <state x="317" y="215" key="com.intellij.ide.util.TipDialog" timestamp="1586781805145">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="317" y="215" key="com.intellij.ide.util.TipDialog/0.23.1280.713@0.23.1280.713" timestamp="1585072619080" />
+    <state x="317" y="215" key="com.intellij.ide.util.TipDialog/0.23.1280.715@0.23.1280.715" timestamp="1585079091603" />
+    <state x="317" y="215" key="com.intellij.ide.util.TipDialog/0.23.1280.716@0.23.1280.716" timestamp="1586781805145" />
+    <state x="317" y="216" key="com.intellij.ide.util.TipDialog/0.23.1280.719@0.23.1280.719" timestamp="1583776084422" />
+    <state x="317" y="216" key="com.intellij.ide.util.TipDialog/0.23.1280.720@0.23.1280.720" timestamp="1585851478735" />
+    <state x="317" y="217" key="com.intellij.ide.util.TipDialog/0.23.1280.721@0.23.1280.721" timestamp="1586538396965" />
+    <state x="317" y="217" key="com.intellij.ide.util.TipDialog/0.23.1280.722@0.23.1280.722" timestamp="1586205721501" />
+    <state x="317" y="217" key="com.intellij.ide.util.TipDialog/0.23.1280.723@0.23.1280.723" timestamp="1582833505284" />
+    <state x="317" y="217" key="com.intellij.ide.util.TipDialog/0.23.1280.724@0.23.1280.724" timestamp="1581778985313" />
+    <state x="337" y="280" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1590334441659">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="337" y="280" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1280.716@0.23.1280.716" timestamp="1590334441659" />
+    <state x="433" y="23" width="745" height="721" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590076206175">
+      <screen x="0" y="23" width="1280" height="721" />
+    </state>
+    <state x="433" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1280.713@0.23.1280.713" timestamp="1584996644753" />
+    <state x="433" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1280.715@0.23.1280.715" timestamp="1584219482928" />
+    <state x="433" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1280.720@0.23.1280.720" timestamp="1582828625170" />
+    <state x="433" y="23" width="745" height="721" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1280.721@0.23.1280.721" timestamp="1590076206175" />
+    <state x="433" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1280.722@0.23.1280.722" timestamp="1586189923365" />
+    <state x="393" y="132" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1590316542565">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="393" y="132" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1280.716@0.23.1280.716" timestamp="1590316542565" />
+    <state x="393" y="133" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1280.721@0.23.1280.721" timestamp="1586016540313" />
+    <state x="59" y="112" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1589999831196">
+      <screen x="0" y="23" width="1280" height="715" />
+    </state>
+    <state x="59" y="112" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1280.715@0.23.1280.715" timestamp="1589999831196" />
+    <state x="378" y="144" width="531" height="484" key="extract.method.dialog" timestamp="1586196494388">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="378" y="144" key="extract.method.dialog/0.23.1280.720@0.23.1280.720" timestamp="1582048836391" />
+    <state x="378" y="144" width="531" height="484" key="extract.method.dialog/0.23.1280.722@0.23.1280.722" timestamp="1586196494388" />
+    <state x="298" y="23" width="837" height="716" key="find.popup" timestamp="1590171205714">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="298" y="23" width="837" height="713" key="find.popup/0.23.1280.713@0.23.1280.713" timestamp="1584814799917" />
+    <state x="298" y="23" width="837" height="715" key="find.popup/0.23.1280.715@0.23.1280.715" timestamp="1589997935641" />
+    <state x="298" y="23" width="837" height="716" key="find.popup/0.23.1280.716@0.23.1280.716" timestamp="1590171205714" />
+    <state x="298" y="23" width="683" height="720" key="find.popup/0.23.1280.720@0.23.1280.720" timestamp="1583511015095" />
+    <state x="298" y="23" width="837" height="721" key="find.popup/0.23.1280.721@0.23.1280.721" timestamp="1586011749625" />
+    <state x="333" y="95" key="git4idea.branch.GitSmartOperationDialog" timestamp="1590326163058">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="333" y="95" key="git4idea.branch.GitSmartOperationDialog/0.23.1280.716@0.23.1280.716" timestamp="1590326163058" />
+    <state x="332" y="171" key="git4idea.merge.GitPullDialog" timestamp="1589998153773">
+      <screen x="0" y="23" width="1280" height="715" />
+    </state>
+    <state x="332" y="171" key="git4idea.merge.GitPullDialog/0.23.1280.715@0.23.1280.715" timestamp="1589998153773" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1585903221853">
+      <screen x="0" y="23" width="1280" height="721" />
+    </state>
+    <state width="600" height="424" key="javadoc.popup/0.23.1280.721@0.23.1280.721" timestamp="1585903221853" />
+    <state x="0" y="23" width="1280" height="716" key="new project wizard" timestamp="1590328918436">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="17" y="23" key="new project wizard/0.23.1280.713@0.23.1280.713" timestamp="1584883358298" />
+    <state x="16" y="23" key="new project wizard/0.23.1280.715@0.23.1280.715" timestamp="1589999997681" />
+    <state x="0" y="23" width="1280" height="716" key="new project wizard/0.23.1280.716@0.23.1280.716" timestamp="1590328918436" />
+    <state x="17" y="23" key="new project wizard/0.23.1280.720@0.23.1280.720" timestamp="1583939248120" />
+    <state x="16" y="23" key="new project wizard/0.23.1280.721@0.23.1280.721" timestamp="1590091909141" />
+    <state x="400" y="23" key="refactoring.ChangeSignatureDialog" timestamp="1585067576382">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state x="400" y="23" key="refactoring.ChangeSignatureDialog/0.23.1280.713@0.23.1280.713" timestamp="1585067576382" />
+    <state x="305" y="168" key="run.anything.popup" timestamp="1590265165319">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="305" y="168" key="run.anything.popup/0.23.1280.716@0.23.1280.716" timestamp="1590265165319" />
+    <state x="305" y="68" width="670" height="672" key="search.everywhere.popup" timestamp="1590324609717">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="305" y="68" width="670" height="670" key="search.everywhere.popup/0.23.1280.713@0.23.1280.713" timestamp="1585068589237" />
+    <state x="305" y="68" width="670" height="671" key="search.everywhere.popup/0.23.1280.715@0.23.1280.715" timestamp="1589998728889" />
+    <state x="305" y="68" width="670" height="672" key="search.everywhere.popup/0.23.1280.716@0.23.1280.716" timestamp="1590324609717" />
+    <state x="305" y="68" width="670" height="676" key="search.everywhere.popup/0.23.1280.720@0.23.1280.720" timestamp="1582828932071" />
+    <state x="305" y="68" width="670" height="676" key="search.everywhere.popup/0.23.1280.721@0.23.1280.721" timestamp="1590093199790" />
+    <state x="305" y="68" width="670" height="678" key="search.everywhere.popup/0.23.1280.723@0.23.1280.723" timestamp="1585509148744" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kodilla-good-patterns/src/main/java/com/kodilla/good/patterns/challenges/Food2Door/OrderService.java</url>
+          <line>3</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kodilla-patterns/src/test/java/com/kodilla/patterns/singleton/SettingsFileEngineTestSuite.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kodilla-patterns/src/test/java/com/kodilla/patterns/singleton/LoggerTestSuite.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/kodilla-patterns/src/test/java/com/kodilla/patterns/singleton/SettingsFileEngineTestSuite.java</url>
+          <line>8</line>
+          <properties field="settingsFileEngine" class="com.kodilla.patterns.singleton.SettingsFileEngineTestSuite" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/kodilla-spring/src/test/java/com/kodilla/spring/calculator/CalculatorTestSuite.java</url>
+          <line>14</line>
+          <properties class="com.kodilla.spring.calculator.CalculatorTestSuite" method="testCalculations">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/kodilla_course$ShopServiceTestSuite.ic" NAME="ShopServiceTestSuite Coverage Results" MODIFIED="1590169248138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/kodilla_course$TaxiOrderTestSuite_testBasicTaxiOrderGetCost.ic" NAME="TaxiOrderTestSuite.testBasicTaxiOrderGetCost Coverage Results" MODIFIED="1590332396849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

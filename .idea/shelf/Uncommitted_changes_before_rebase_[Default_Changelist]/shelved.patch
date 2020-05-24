@@ -1,0 +1,1125 @@
+Index: kodilla-hibernate/src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.datasource.url=jdbc:mysql://localhost:3306/kodilla_course?serverTimezone=Europe/Warsaw&useSSL=False\nspring.datasource.username=kodilla_user\nspring.datasource.password=kodilla_password\n\nspring.jpa.database=mysql\nspring.jpa.show-sql=true\nspring.jpa.hibernate.ddl-auto=update\nspring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-hibernate/src/main/resources/application.properties	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-hibernate/src/main/resources/application.properties	(date 1590264921471)
+@@ -5,4 +5,4 @@
+ spring.jpa.database=mysql
+ spring.jpa.show-sql=true
+ spring.jpa.hibernate.ddl-auto=update
+-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+\ No newline at end of file
++spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+Index: kodilla-patterns2/build/reports/tests/test/js/report.js
+===================================================================
+--- kodilla-patterns2/build/reports/tests/test/js/report.js	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-patterns2/build/reports/tests/test/js/report.js	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
+@@ -1,194 +0,0 @@
+-(function (window, document) {
+-    "use strict";
+-
+-    var tabs = {};
+-
+-    function changeElementClass(element, classValue) {
+-        if (element.getAttribute("className")) {
+-            element.setAttribute("className", classValue);
+-        } else {
+-            element.setAttribute("class", classValue);
+-        }
+-    }
+-
+-    function getClassAttribute(element) {
+-        if (element.getAttribute("className")) {
+-            return element.getAttribute("className");
+-        } else {
+-            return element.getAttribute("class");
+-        }
+-    }
+-
+-    function addClass(element, classValue) {
+-        changeElementClass(element, getClassAttribute(element) + " " + classValue);
+-    }
+-
+-    function removeClass(element, classValue) {
+-        changeElementClass(element, getClassAttribute(element).replace(classValue, ""));
+-    }
+-
+-    function initTabs() {
+-        var container = document.getElementById("tabs");
+-
+-        tabs.tabs = findTabs(container);
+-        tabs.titles = findTitles(tabs.tabs);
+-        tabs.headers = findHeaders(container);
+-        tabs.select = select;
+-        tabs.deselectAll = deselectAll;
+-        tabs.select(0);
+-
+-        return true;
+-    }
+-
+-    function getCheckBox() {
+-        return document.getElementById("line-wrapping-toggle");
+-    }
+-
+-    function getLabelForCheckBox() {
+-        return document.getElementById("label-for-line-wrapping-toggle");
+-    }
+-
+-    function findCodeBlocks() {
+-        var spans = document.getElementById("tabs").getElementsByTagName("span");
+-        var codeBlocks = [];
+-        for (var i = 0; i < spans.length; ++i) {
+-            if (spans[i].className.indexOf("code") >= 0) {
+-                codeBlocks.push(spans[i]);
+-            }
+-        }
+-        return codeBlocks;
+-    }
+-
+-    function forAllCodeBlocks(operation) {
+-        var codeBlocks = findCodeBlocks();
+-
+-        for (var i = 0; i < codeBlocks.length; ++i) {
+-            operation(codeBlocks[i], "wrapped");
+-        }
+-    }
+-
+-    function toggleLineWrapping() {
+-        var checkBox = getCheckBox();
+-
+-        if (checkBox.checked) {
+-            forAllCodeBlocks(addClass);
+-        } else {
+-            forAllCodeBlocks(removeClass);
+-        }
+-    }
+-
+-    function initControls() {
+-        if (findCodeBlocks().length > 0) {
+-            var checkBox = getCheckBox();
+-            var label = getLabelForCheckBox();
+-
+-            checkBox.onclick = toggleLineWrapping;
+-            checkBox.checked = false;
+-
+-            removeClass(label, "hidden");
+-         }
+-    }
+-
+-    function switchTab() {
+-        var id = this.id.substr(1);
+-
+-        for (var i = 0; i < tabs.tabs.length; i++) {
+-            if (tabs.tabs[i].id === id) {
+-                tabs.select(i);
+-                break;
+-            }
+-        }
+-
+-        return false;
+-    }
+-
+-    function select(i) {
+-        this.deselectAll();
+-
+-        changeElementClass(this.tabs[i], "tab selected");
+-        changeElementClass(this.headers[i], "selected");
+-
+-        while (this.headers[i].firstChild) {
+-            this.headers[i].removeChild(this.headers[i].firstChild);
+-        }
+-
+-        var h2 = document.createElement("H2");
+-
+-        h2.appendChild(document.createTextNode(this.titles[i]));
+-        this.headers[i].appendChild(h2);
+-    }
+-
+-    function deselectAll() {
+-        for (var i = 0; i < this.tabs.length; i++) {
+-            changeElementClass(this.tabs[i], "tab deselected");
+-            changeElementClass(this.headers[i], "deselected");
+-
+-            while (this.headers[i].firstChild) {
+-                this.headers[i].removeChild(this.headers[i].firstChild);
+-            }
+-
+-            var a = document.createElement("A");
+-
+-            a.setAttribute("id", "ltab" + i);
+-            a.setAttribute("href", "#tab" + i);
+-            a.onclick = switchTab;
+-            a.appendChild(document.createTextNode(this.titles[i]));
+-
+-            this.headers[i].appendChild(a);
+-        }
+-    }
+-
+-    function findTabs(container) {
+-        return findChildElements(container, "DIV", "tab");
+-    }
+-
+-    function findHeaders(container) {
+-        var owner = findChildElements(container, "UL", "tabLinks");
+-        return findChildElements(owner[0], "LI", null);
+-    }
+-
+-    function findTitles(tabs) {
+-        var titles = [];
+-
+-        for (var i = 0; i < tabs.length; i++) {
+-            var tab = tabs[i];
+-            var header = findChildElements(tab, "H2", null)[0];
+-
+-            header.parentNode.removeChild(header);
+-
+-            if (header.innerText) {
+-                titles.push(header.innerText);
+-            } else {
+-                titles.push(header.textContent);
+-            }
+-        }
+-
+-        return titles;
+-    }
+-
+-    function findChildElements(container, name, targetClass) {
+-        var elements = [];
+-        var children = container.childNodes;
+-
+-        for (var i = 0; i < children.length; i++) {
+-            var child = children.item(i);
+-
+-            if (child.nodeType === 1 && child.nodeName === name) {
+-                if (targetClass && child.className.indexOf(targetClass) < 0) {
+-                    continue;
+-                }
+-
+-                elements.push(child);
+-            }
+-        }
+-
+-        return elements;
+-    }
+-
+-    // Entry point.
+-
+-    window.onload = function() {
+-        initTabs();
+-        initControls();
+-    };
+-} (window, window.document));
+\ No newline at end of file
+Index: kodilla-patterns2/build/reports/tests/test/classes/com.kodilla.patterns2.facade.ShopServiceTestSuite.html
+===================================================================
+--- kodilla-patterns2/build/reports/tests/test/classes/com.kodilla.patterns2.facade.ShopServiceTestSuite.html	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-patterns2/build/reports/tests/test/classes/com.kodilla.patterns2.facade.ShopServiceTestSuite.html	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
+@@ -1,143 +0,0 @@
+-<!DOCTYPE html>
+-<html>
+-<head>
+-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+-<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+-<title>Test results - ShopServiceTestSuite</title>
+-<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+-<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+-<script src="../js/report.js" type="text/javascript"></script>
+-</head>
+-<body>
+-<div id="content">
+-<h1>ShopServiceTestSuite</h1>
+-<div class="breadcrumbs">
+-<a href="../index.html">all</a> &gt; 
+-<a href="../packages/com.kodilla.patterns2.facade.html">com.kodilla.patterns2.facade</a> &gt; ShopServiceTestSuite</div>
+-<div id="summary">
+-<table>
+-<tr>
+-<td>
+-<div class="summaryGroup">
+-<table>
+-<tr>
+-<td>
+-<div class="infoBox" id="tests">
+-<div class="counter">2</div>
+-<p>tests</p>
+-</div>
+-</td>
+-<td>
+-<div class="infoBox" id="failures">
+-<div class="counter">0</div>
+-<p>failures</p>
+-</div>
+-</td>
+-<td>
+-<div class="infoBox" id="ignored">
+-<div class="counter">0</div>
+-<p>ignored</p>
+-</div>
+-</td>
+-<td>
+-<div class="infoBox" id="duration">
+-<div class="counter">0.583s</div>
+-<p>duration</p>
+-</div>
+-</td>
+-</tr>
+-</table>
+-</div>
+-</td>
+-<td>
+-<div class="infoBox success" id="successRate">
+-<div class="percent">100%</div>
+-<p>successful</p>
+-</div>
+-</td>
+-</tr>
+-</table>
+-</div>
+-<div id="tabs">
+-<ul class="tabLinks">
+-<li>
+-<a href="#tab0">Tests</a>
+-</li>
+-<li>
+-<a href="#tab1">Standard output</a>
+-</li>
+-</ul>
+-<div id="tab0" class="tab">
+-<h2>Tests</h2>
+-<table>
+-<thead>
+-<tr>
+-<th>Test</th>
+-<th>Duration</th>
+-<th>Result</th>
+-</tr>
+-</thead>
+-<tr>
+-<td class="success">testShopFacade</td>
+-<td class="success">0.080s</td>
+-<td class="success">passed</td>
+-</tr>
+-<tr>
+-<td class="success">testShopServiceSubmitOrder</td>
+-<td class="success">0.503s</td>
+-<td class="success">passed</td>
+-</tr>
+-</table>
+-</div>
+-<div id="tab1" class="tab">
+-<h2>Standard output</h2>
+-<span class="code">
+-<pre>21:59:02.059 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.kodilla.patterns2.facade.ShopServiceTestSuite]
+-21:59:02.060 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.kodilla.patterns2.facade.ShopServiceTestSuite]
+-21:59:02.062 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.kodilla.patterns2.facade.ShopServiceTestSuite]
+-21:59:02.062 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.kodilla.patterns2.facade.ShopServiceTestSuite]
+-21:59:02.073 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@c2a52f0 testClass = ShopServiceTestSuite, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1bdee3f0 testClass = ShopServiceTestSuite, locations = '{}', classes = '{class com.kodilla.patterns2.KodillaPatterns2Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2dbd34d2, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5edaef80, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@525fafde, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@59276322, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+-21:59:02.078 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.kodilla.patterns2.facade.ShopServiceTestSuite]
+-21:59:02.078 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.kodilla.patterns2.facade.ShopServiceTestSuite]
+-21:59:02.088 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@c2a52f0 testClass = ShopServiceTestSuite, testInstance = com.kodilla.patterns2.facade.ShopServiceTestSuite@3b8d8335, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1bdee3f0 testClass = ShopServiceTestSuite, locations = '{}', classes = '{class com.kodilla.patterns2.KodillaPatterns2Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2dbd34d2, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5edaef80, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@525fafde, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@59276322, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]].
+-21:59:02.147 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+-
+-  .   ____          _            __ _ _
+- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+-  '  |____| .__|_| |_|_| |_\__, | / / / /
+- =========|_|==============|___/=/_/_/_/
+- :: Spring Boot ::        (v2.3.0.RELEASE)
+-
+-2020-05-23 21:59:12.637  WARN 888 --- [    Test worker] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+-2020-05-23 21:59:17.644  INFO 888 --- [    Test worker] c.k.p.facade.ShopServiceTestSuite        : Starting ShopServiceTestSuite on MacBook-Pro-DarekMarta.local with PID 888 (started by darekmarta in /Users/darekmarta/IdeaProjects/kodilla-course/kodilla-patterns2)
+-2020-05-23 21:59:17.646  INFO 888 --- [    Test worker] c.k.p.facade.ShopServiceTestSuite        : No active profile set, falling back to default profiles: default
+-2020-05-23 21:59:19.080  INFO 888 --- [    Test worker] c.k.p.facade.ShopServiceTestSuite        : Started ShopServiceTestSuite in 16.923 seconds (JVM running for 20.051)
+-Registering new order, ID: -1
+-Access denied. User is not authenticated.
+-2020-05-23 21:59:19.640  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Registering new order, ID: 1
+-2020-05-23 21:59:19.645  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Adding item 10, 2.0 pcs
+-2020-05-23 21:59:19.679  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Adding item 216, 1.0 pcs
+-2020-05-23 21:59:19.679  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Adding item 25, 1.0 pcs
+-2020-05-23 21:59:19.679  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Adding item 11, 3.0 pcs
+-2020-05-23 21:59:19.681  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Order value is: 4137 USD
+-2020-05-23 21:59:19.681  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Payment for order was done
+-2020-05-23 21:59:19.682 ERROR 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Verification error
+-2020-05-23 21:59:19.683  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Cancelling order 1
+-</pre>
+-</span>
+-</div>
+-</div>
+-<div id="footer">
+-<p>
+-<div>
+-<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+-<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+-</label>
+-</div>Generated by 
+-<a href="http://www.gradle.org">Gradle 6.3</a> at 2020-05-23 21:59:20</p>
+-</div>
+-</div>
+-</body>
+-</html>
+Index: kodilla-patterns2/build/reports/tests/test/css/style.css
+===================================================================
+--- kodilla-patterns2/build/reports/tests/test/css/style.css	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-patterns2/build/reports/tests/test/css/style.css	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
+@@ -1,84 +0,0 @@
+-
+-#summary {
+-    margin-top: 30px;
+-    margin-bottom: 40px;
+-}
+-
+-#summary table {
+-    border-collapse: collapse;
+-}
+-
+-#summary td {
+-    vertical-align: top;
+-}
+-
+-.breadcrumbs, .breadcrumbs a {
+-    color: #606060;
+-}
+-
+-.infoBox {
+-    width: 110px;
+-    padding-top: 15px;
+-    padding-bottom: 15px;
+-    text-align: center;
+-}
+-
+-.infoBox p {
+-    margin: 0;
+-}
+-
+-.counter, .percent {
+-    font-size: 120%;
+-    font-weight: bold;
+-    margin-bottom: 8px;
+-}
+-
+-#duration {
+-    width: 125px;
+-}
+-
+-#successRate, .summaryGroup {
+-    border: solid 2px #d0d0d0;
+-    -moz-border-radius: 10px;
+-    border-radius: 10px;
+-}
+-
+-#successRate {
+-    width: 140px;
+-    margin-left: 35px;
+-}
+-
+-#successRate .percent {
+-    font-size: 180%;
+-}
+-
+-.success, .success a {
+-    color: #008000;
+-}
+-
+-div.success, #successRate.success {
+-    background-color: #bbd9bb;
+-    border-color: #008000;
+-}
+-
+-.failures, .failures a {
+-    color: #b60808;
+-}
+-
+-.skipped, .skipped a {
+-    color: #c09853;
+-}
+-
+-div.failures, #successRate.failures {
+-    background-color: #ecdada;
+-    border-color: #b60808;
+-}
+-
+-ul.linkList {
+-    padding-left: 0;
+-}
+-
+-ul.linkList li {
+-    list-style: none;
+-    margin-bottom: 5px;
+-}
+Index: kodilla-patterns2/HELP.md
+===================================================================
+--- kodilla-patterns2/HELP.md	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-patterns2/HELP.md	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
+@@ -1,14 +0,0 @@
+-# Getting Started
+-
+-### Reference Documentation
+-For further reference, please consider the following sections:
+-
+-* [Official Gradle documentation](https://docs.gradle.org)
+-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/gradle-plugin/reference/html/)
+-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/gradle-plugin/reference/html/#build-image)
+-
+-### Additional Links
+-These additional references should also help you:
+-
+-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+-
+Index: kodilla-patterns2/build/reports/tests/test/packages/com.kodilla.patterns2.facade.html
+===================================================================
+--- kodilla-patterns2/build/reports/tests/test/packages/com.kodilla.patterns2.facade.html	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-patterns2/build/reports/tests/test/packages/com.kodilla.patterns2.facade.html	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
+@@ -1,103 +0,0 @@
+-<!DOCTYPE html>
+-<html>
+-<head>
+-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+-<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+-<title>Test results - Package com.kodilla.patterns2.facade</title>
+-<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+-<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+-<script src="../js/report.js" type="text/javascript"></script>
+-</head>
+-<body>
+-<div id="content">
+-<h1>Package com.kodilla.patterns2.facade</h1>
+-<div class="breadcrumbs">
+-<a href="../index.html">all</a> &gt; com.kodilla.patterns2.facade</div>
+-<div id="summary">
+-<table>
+-<tr>
+-<td>
+-<div class="summaryGroup">
+-<table>
+-<tr>
+-<td>
+-<div class="infoBox" id="tests">
+-<div class="counter">2</div>
+-<p>tests</p>
+-</div>
+-</td>
+-<td>
+-<div class="infoBox" id="failures">
+-<div class="counter">0</div>
+-<p>failures</p>
+-</div>
+-</td>
+-<td>
+-<div class="infoBox" id="ignored">
+-<div class="counter">0</div>
+-<p>ignored</p>
+-</div>
+-</td>
+-<td>
+-<div class="infoBox" id="duration">
+-<div class="counter">0.583s</div>
+-<p>duration</p>
+-</div>
+-</td>
+-</tr>
+-</table>
+-</div>
+-</td>
+-<td>
+-<div class="infoBox success" id="successRate">
+-<div class="percent">100%</div>
+-<p>successful</p>
+-</div>
+-</td>
+-</tr>
+-</table>
+-</div>
+-<div id="tabs">
+-<ul class="tabLinks">
+-<li>
+-<a href="#tab0">Classes</a>
+-</li>
+-</ul>
+-<div id="tab0" class="tab">
+-<h2>Classes</h2>
+-<table>
+-<thread>
+-<tr>
+-<th>Class</th>
+-<th>Tests</th>
+-<th>Failures</th>
+-<th>Ignored</th>
+-<th>Duration</th>
+-<th>Success rate</th>
+-</tr>
+-</thread>
+-<tr>
+-<td class="success">
+-<a href="../classes/com.kodilla.patterns2.facade.ShopServiceTestSuite.html">ShopServiceTestSuite</a>
+-</td>
+-<td>2</td>
+-<td>0</td>
+-<td>0</td>
+-<td>0.583s</td>
+-<td class="success">100%</td>
+-</tr>
+-</table>
+-</div>
+-</div>
+-<div id="footer">
+-<p>
+-<div>
+-<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+-<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+-</label>
+-</div>Generated by 
+-<a href="http://www.gradle.org">Gradle 6.3</a> at 2020-05-23 21:59:20</p>
+-</div>
+-</div>
+-</body>
+-</html>
+Index: kodilla-patterns2/build/reports/tests/test/css/base-style.css
+===================================================================
+--- kodilla-patterns2/build/reports/tests/test/css/base-style.css	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-patterns2/build/reports/tests/test/css/base-style.css	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
+@@ -1,179 +0,0 @@
+-
+-body {
+-    margin: 0;
+-    padding: 0;
+-    font-family: sans-serif;
+-    font-size: 12pt;
+-}
+-
+-body, a, a:visited {
+-    color: #303030;
+-}
+-
+-#content {
+-    padding-left: 50px;
+-    padding-right: 50px;
+-    padding-top: 30px;
+-    padding-bottom: 30px;
+-}
+-
+-#content h1 {
+-    font-size: 160%;
+-    margin-bottom: 10px;
+-}
+-
+-#footer {
+-    margin-top: 100px;
+-    font-size: 80%;
+-    white-space: nowrap;
+-}
+-
+-#footer, #footer a {
+-    color: #a0a0a0;
+-}
+-
+-#line-wrapping-toggle {
+-    vertical-align: middle;
+-}
+-
+-#label-for-line-wrapping-toggle {
+-    vertical-align: middle;
+-}
+-
+-ul {
+-    margin-left: 0;
+-}
+-
+-h1, h2, h3 {
+-    white-space: nowrap;
+-}
+-
+-h2 {
+-    font-size: 120%;
+-}
+-
+-ul.tabLinks {
+-    padding-left: 0;
+-    padding-top: 10px;
+-    padding-bottom: 10px;
+-    overflow: auto;
+-    min-width: 800px;
+-    width: auto !important;
+-    width: 800px;
+-}
+-
+-ul.tabLinks li {
+-    float: left;
+-    height: 100%;
+-    list-style: none;
+-    padding-left: 10px;
+-    padding-right: 10px;
+-    padding-top: 5px;
+-    padding-bottom: 5px;
+-    margin-bottom: 0;
+-    -moz-border-radius: 7px;
+-    border-radius: 7px;
+-    margin-right: 25px;
+-    border: solid 1px #d4d4d4;
+-    background-color: #f0f0f0;
+-}
+-
+-ul.tabLinks li:hover {
+-    background-color: #fafafa;
+-}
+-
+-ul.tabLinks li.selected {
+-    background-color: #c5f0f5;
+-    border-color: #c5f0f5;
+-}
+-
+-ul.tabLinks a {
+-    font-size: 120%;
+-    display: block;
+-    outline: none;
+-    text-decoration: none;
+-    margin: 0;
+-    padding: 0;
+-}
+-
+-ul.tabLinks li h2 {
+-    margin: 0;
+-    padding: 0;
+-}
+-
+-div.tab {
+-}
+-
+-div.selected {
+-    display: block;
+-}
+-
+-div.deselected {
+-    display: none;
+-}
+-
+-div.tab table {
+-    min-width: 350px;
+-    width: auto !important;
+-    width: 350px;
+-    border-collapse: collapse;
+-}
+-
+-div.tab th, div.tab table {
+-    border-bottom: solid #d0d0d0 1px;
+-}
+-
+-div.tab th {
+-    text-align: left;
+-    white-space: nowrap;
+-    padding-left: 6em;
+-}
+-
+-div.tab th:first-child {
+-    padding-left: 0;
+-}
+-
+-div.tab td {
+-    white-space: nowrap;
+-    padding-left: 6em;
+-    padding-top: 5px;
+-    padding-bottom: 5px;
+-}
+-
+-div.tab td:first-child {
+-    padding-left: 0;
+-}
+-
+-div.tab td.numeric, div.tab th.numeric {
+-    text-align: right;
+-}
+-
+-span.code {
+-    display: inline-block;
+-    margin-top: 0em;
+-    margin-bottom: 1em;
+-}
+-
+-span.code pre {
+-    font-size: 11pt;
+-    padding-top: 10px;
+-    padding-bottom: 10px;
+-    padding-left: 10px;
+-    padding-right: 10px;
+-    margin: 0;
+-    background-color: #f7f7f7;
+-    border: solid 1px #d0d0d0;
+-    min-width: 700px;
+-    width: auto !important;
+-    width: 700px;
+-}
+-
+-span.wrapped pre {
+-    word-wrap: break-word;
+-    white-space: pre-wrap;
+-    word-break: break-all;
+-}
+-
+-label.hidden {
+-    display: none;
+-}
+\ No newline at end of file
+Index: kodilla-patterns2/build/test-results/test/TEST-com.kodilla.patterns2.facade.ShopServiceTestSuite.xml
+===================================================================
+--- kodilla-patterns2/build/test-results/test/TEST-com.kodilla.patterns2.facade.ShopServiceTestSuite.xml	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-patterns2/build/test-results/test/TEST-com.kodilla.patterns2.facade.ShopServiceTestSuite.xml	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
+@@ -1,41 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<testsuite name="com.kodilla.patterns2.facade.ShopServiceTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-05-23T19:59:19" hostname="MacBook-Pro-DarekMarta.local" time="0.584">
+-  <properties/>
+-  <testcase name="testShopServiceSubmitOrder" classname="com.kodilla.patterns2.facade.ShopServiceTestSuite" time="0.503"/>
+-  <testcase name="testShopFacade" classname="com.kodilla.patterns2.facade.ShopServiceTestSuite" time="0.08"/>
+-  <system-out><![CDATA[21:59:02.059 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.kodilla.patterns2.facade.ShopServiceTestSuite]
+-21:59:02.060 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.kodilla.patterns2.facade.ShopServiceTestSuite]
+-21:59:02.062 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.kodilla.patterns2.facade.ShopServiceTestSuite]
+-21:59:02.062 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.kodilla.patterns2.facade.ShopServiceTestSuite]
+-21:59:02.073 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@c2a52f0 testClass = ShopServiceTestSuite, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1bdee3f0 testClass = ShopServiceTestSuite, locations = '{}', classes = '{class com.kodilla.patterns2.KodillaPatterns2Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2dbd34d2, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5edaef80, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@525fafde, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@59276322, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+-21:59:02.078 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.kodilla.patterns2.facade.ShopServiceTestSuite]
+-21:59:02.078 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.kodilla.patterns2.facade.ShopServiceTestSuite]
+-21:59:02.088 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@c2a52f0 testClass = ShopServiceTestSuite, testInstance = com.kodilla.patterns2.facade.ShopServiceTestSuite@3b8d8335, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1bdee3f0 testClass = ShopServiceTestSuite, locations = '{}', classes = '{class com.kodilla.patterns2.KodillaPatterns2Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2dbd34d2, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5edaef80, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@525fafde, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@59276322, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]].
+-21:59:02.147 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+-
+-  .   ____          _            __ _ _
+- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+-  '  |____| .__|_| |_|_| |_\__, | / / / /
+- =========|_|==============|___/=/_/_/_/
+- :: Spring Boot ::        (v2.3.0.RELEASE)
+-
+-2020-05-23 21:59:12.637  WARN 888 --- [    Test worker] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+-2020-05-23 21:59:17.644  INFO 888 --- [    Test worker] c.k.p.facade.ShopServiceTestSuite        : Starting ShopServiceTestSuite on MacBook-Pro-DarekMarta.local with PID 888 (started by darekmarta in /Users/darekmarta/IdeaProjects/kodilla-course/kodilla-patterns2)
+-2020-05-23 21:59:17.646  INFO 888 --- [    Test worker] c.k.p.facade.ShopServiceTestSuite        : No active profile set, falling back to default profiles: default
+-2020-05-23 21:59:19.080  INFO 888 --- [    Test worker] c.k.p.facade.ShopServiceTestSuite        : Started ShopServiceTestSuite in 16.923 seconds (JVM running for 20.051)
+-Registering new order, ID: -1
+-Access denied. User is not authenticated.
+-2020-05-23 21:59:19.640  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Registering new order, ID: 1
+-2020-05-23 21:59:19.645  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Adding item 10, 2.0 pcs
+-2020-05-23 21:59:19.679  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Adding item 216, 1.0 pcs
+-2020-05-23 21:59:19.679  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Adding item 25, 1.0 pcs
+-2020-05-23 21:59:19.679  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Adding item 11, 3.0 pcs
+-2020-05-23 21:59:19.681  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Order value is: 4137 USD
+-2020-05-23 21:59:19.681  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Payment for order was done
+-2020-05-23 21:59:19.682 ERROR 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Verification error
+-2020-05-23 21:59:19.683  INFO 888 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Cancelling order 1
+-]]></system-out>
+-  <system-err><![CDATA[]]></system-err>
+-</testsuite>
+Index: kodilla-patterns2/.gradle/workspace-id.txt
+===================================================================
+--- kodilla-patterns2/.gradle/workspace-id.txt	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-patterns2/.gradle/workspace-id.txt	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
+@@ -1,1 +0,0 @@
+- rmfcttyjszeadky5cns4dk6txa
+\ No newline at end of file
+Index: kodilla-patterns2/build/resources/main/application.properties
+===================================================================
+--- kodilla-patterns2/build/resources/main/application.properties	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-patterns2/build/resources/main/application.properties	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
+@@ -1,1 +0,0 @@
+-
+Index: kodilla-patterns2/.gradle/buildOutputCleanup/cache.properties
+===================================================================
+--- kodilla-patterns2/.gradle/buildOutputCleanup/cache.properties	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-patterns2/.gradle/buildOutputCleanup/cache.properties	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
+@@ -1,2 +0,0 @@
+-#Fri May 22 19:16:06 CEST 2020
+-gradle.version=6.3
+Index: kodilla-patterns2/build/reports/tests/test/index.html
+===================================================================
+--- kodilla-patterns2/build/reports/tests/test/index.html	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-patterns2/build/reports/tests/test/index.html	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
+@@ -1,133 +0,0 @@
+-<!DOCTYPE html>
+-<html>
+-<head>
+-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+-<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+-<title>Test results - Test Summary</title>
+-<link href="css/base-style.css" rel="stylesheet" type="text/css"/>
+-<link href="css/style.css" rel="stylesheet" type="text/css"/>
+-<script src="js/report.js" type="text/javascript"></script>
+-</head>
+-<body>
+-<div id="content">
+-<h1>Test Summary</h1>
+-<div id="summary">
+-<table>
+-<tr>
+-<td>
+-<div class="summaryGroup">
+-<table>
+-<tr>
+-<td>
+-<div class="infoBox" id="tests">
+-<div class="counter">2</div>
+-<p>tests</p>
+-</div>
+-</td>
+-<td>
+-<div class="infoBox" id="failures">
+-<div class="counter">0</div>
+-<p>failures</p>
+-</div>
+-</td>
+-<td>
+-<div class="infoBox" id="ignored">
+-<div class="counter">0</div>
+-<p>ignored</p>
+-</div>
+-</td>
+-<td>
+-<div class="infoBox" id="duration">
+-<div class="counter">0.583s</div>
+-<p>duration</p>
+-</div>
+-</td>
+-</tr>
+-</table>
+-</div>
+-</td>
+-<td>
+-<div class="infoBox success" id="successRate">
+-<div class="percent">100%</div>
+-<p>successful</p>
+-</div>
+-</td>
+-</tr>
+-</table>
+-</div>
+-<div id="tabs">
+-<ul class="tabLinks">
+-<li>
+-<a href="#tab0">Packages</a>
+-</li>
+-<li>
+-<a href="#tab1">Classes</a>
+-</li>
+-</ul>
+-<div id="tab0" class="tab">
+-<h2>Packages</h2>
+-<table>
+-<thead>
+-<tr>
+-<th>Package</th>
+-<th>Tests</th>
+-<th>Failures</th>
+-<th>Ignored</th>
+-<th>Duration</th>
+-<th>Success rate</th>
+-</tr>
+-</thead>
+-<tbody>
+-<tr>
+-<td class="success">
+-<a href="packages/com.kodilla.patterns2.facade.html">com.kodilla.patterns2.facade</a>
+-</td>
+-<td>2</td>
+-<td>0</td>
+-<td>0</td>
+-<td>0.583s</td>
+-<td class="success">100%</td>
+-</tr>
+-</tbody>
+-</table>
+-</div>
+-<div id="tab1" class="tab">
+-<h2>Classes</h2>
+-<table>
+-<thead>
+-<tr>
+-<th>Class</th>
+-<th>Tests</th>
+-<th>Failures</th>
+-<th>Ignored</th>
+-<th>Duration</th>
+-<th>Success rate</th>
+-</tr>
+-</thead>
+-<tbody>
+-<tr>
+-<td class="success">
+-<a href="classes/com.kodilla.patterns2.facade.ShopServiceTestSuite.html">com.kodilla.patterns2.facade.ShopServiceTestSuite</a>
+-</td>
+-<td>2</td>
+-<td>0</td>
+-<td>0</td>
+-<td>0.583s</td>
+-<td class="success">100%</td>
+-</tr>
+-</tbody>
+-</table>
+-</div>
+-</div>
+-<div id="footer">
+-<p>
+-<div>
+-<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+-<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+-</label>
+-</div>Generated by 
+-<a href="http://www.gradle.org">Gradle 6.3</a> at 2020-05-23 21:59:20</p>
+-</div>
+-</div>
+-</body>
+-</html>
+Index: kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/dao/EmployeeDao.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.kodilla.hibernate.manytomany.dao;\n\nimport com.kodilla.hibernate.manytomany.Employee;\nimport org.springframework.data.jpa.repository.Query;\nimport org.springframework.data.repository.CrudRepository;\nimport org.springframework.data.repository.query.Param;\nimport org.springframework.stereotype.Repository;\nimport javax.transaction.Transactional;\nimport java.util.List;\n\n@Transactional\n@Repository\npublic interface EmployeeDao extends CrudRepository<Employee, Integer> {\n    @Query\n    List<Employee> retrieveEmployeesByLastname(@Param(\"LASTNAME\") String lastname);\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/dao/EmployeeDao.java	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/dao/EmployeeDao.java	(date 1590264294739)
+@@ -5,6 +5,7 @@
+ import org.springframework.data.repository.CrudRepository;
+ import org.springframework.data.repository.query.Param;
+ import org.springframework.stereotype.Repository;
++
+ import javax.transaction.Transactional;
+ import java.util.List;
+ 
+@@ -14,4 +15,6 @@
+     @Query
+     List<Employee> retrieveEmployeesByLastname(@Param("LASTNAME") String lastname);
+ 
++    @Query
++    List<Employee> retrieveEmployeesNamedAs(@Param("ARG") String arg);
+ }
+\ No newline at end of file
+Index: kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/Employee.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.kodilla.hibernate.manytomany;\n\nimport com.sun.istack.NotNull;\nimport javax.persistence.*;\nimport java.util.ArrayList;\nimport java.util.List;\n\n@NamedQuery (\n        name = \"Employee.retrieveEmployeesByLastname\",\n        query = \"FROM Employee WHERE lastname = :LASTNAME\"\n)\n@Entity\n@Table(name=\"EMPLOYEES\")\npublic class Employee {\n    private int id;\n    private String firstname;\n    private String lastname;\n    private List<Company> companies = new ArrayList<>();\n\n    public Employee(){\n    }\n\n    public Employee(String firstname, String lastname){\n        this.firstname = firstname;\n        this.lastname = lastname;\n    }\n    @Id\n    @GeneratedValue\n    @NotNull\n    @Column(name=\"EMPLOYEE_ID\", unique = true)\n    public int getId(){\n        return id;\n    }\n    @Column(name=\"FIRSTNAME\")\n    public String getFirstname(){\n        return firstname;\n    }\n    @Column (name=\"LASTNAME\")\n    public String getLastname(){\n        return lastname;\n    }\n    @ManyToMany(cascade = CascadeType.ALL)\n    @JoinTable(\n            name=\"JOIN_COMPANY_EMPLOYEE\",\n            joinColumns = {@JoinColumn(name=\"EMPLOYEE_ID\", referencedColumnName = \"EMPLOYEE_ID\")},\n            inverseJoinColumns ={@JoinColumn(name = \"COMPANY_ID\", referencedColumnName = \"COMPANY_ID\")}\n    )\n    public List<Company> getCompanies(){\n        return companies;\n    }\n    private void setId(int id){\n        this.id = id;\n    }\n    private void setFirstname(String firstname){\n        this.firstname = firstname;\n    }\n    private void setLastname(String lastname){\n        this. lastname = lastname;\n    }\n    public void setCompanies(List<Company> companies){\n        this.companies = companies;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/Employee.java	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/Employee.java	(date 1590220605817)
+@@ -1,7 +1,7 @@
+ package com.kodilla.hibernate.manytomany;
+ 
+-import com.sun.istack.NotNull;
+ import javax.persistence.*;
++import javax.validation.constraints.NotNull;
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+Index: kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/dao/CompanyDao.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.kodilla.hibernate.manytomany.dao;\n\nimport com.kodilla.hibernate.manytomany.Company;\nimport org.springframework.data.jpa.repository.Query;\nimport org.springframework.data.repository.CrudRepository;\nimport org.springframework.data.repository.query.Param;\nimport org.springframework.stereotype.Repository;\nimport javax.transaction.Transactional;\nimport java.util.List;\n\n@Transactional\n@Repository\npublic interface CompanyDao extends CrudRepository<Company, Integer>{\n    @Query(nativeQuery = true)\n    List<Company> retrieveCompaniesThreeLettersEqualsTo(@Param(\"SUBSTRING\") String substring);\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/dao/CompanyDao.java	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/dao/CompanyDao.java	(date 1590262093963)
+@@ -13,4 +13,7 @@
+ public interface CompanyDao extends CrudRepository<Company, Integer>{
+     @Query(nativeQuery = true)
+     List<Company> retrieveCompaniesThreeLettersEqualsTo(@Param("SUBSTRING") String substring);
++
++    @Query(nativeQuery = true)
++    List<Company> retrieveCompaniesNamedAs(@Param("ARG") String arg);
+ }
+Index: kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Product.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.kodilla.hibernate.invoice;\n\nimport com.sun.istack.NotNull;\nimport javax.persistence.*;\nimport java.util.List;\n\n@Entity\n@Table(name=\"PRODUCTS\")\npublic class Product {\n    private int id;\n    private String name;\n    private List<Item> items;\n\n    public Product(){\n    }\n\n    public Product(String name){\n        this.name = name;\n    }\n    @Id\n    @GeneratedValue\n    @NotNull\n    @Column (name = \"PRODUCT_ID\", unique = true)\n    public int getId(){\n        return id;\n    }\n    @Column(name = \"NAME\")\n    public String getName(){\n        return name;\n    }\n    @OneToMany(\n            targetEntity = Item.class,\n            mappedBy = \"product\",\n            cascade = CascadeType.ALL,\n            fetch = FetchType.LAZY\n    )\n    @Column(name = \"ITEMLIST\")\n    public List<Item> getItems(){\n        return items;\n    }\n    private void setId(int id){\n        this.id = id;\n    }\n    private void setName(String name){\n        this.name = name;\n    }\n    public void setItems (List<Item> items){\n        this.items = items;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Product.java	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Product.java	(date 1590159108377)
+@@ -1,7 +1,7 @@
+ package com.kodilla.hibernate.invoice;
+ 
+-import com.sun.istack.NotNull;
+ import javax.persistence.*;
++import javax.validation.constraints.NotNull;
+ import java.util.List;
+ 
+ @Entity
+Index: kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Invoice.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.kodilla.hibernate.invoice;\n\nimport com.sun.istack.NotNull;\nimport javax.persistence.*;\nimport java.util.ArrayList;\nimport java.util.List;\n\n@Entity\n@Table(name=\"INVOICES\")\npublic class Invoice {\n    private int id;\n    private String number;\n    private List<Item> items = new ArrayList<>();\n\n    public Invoice(){\n    }\n    public Invoice(String number){\n        this.number = number;\n    }\n    @Id\n    @GeneratedValue\n    @NotNull\n    @Column(name=\"INVOICE_ID\", unique = true)\n    public int getId(){\n        return id;\n    }\n    @Column(name = \"NUMBERS\")\n    public String getNumber(){\n        return number;\n    }\n    @OneToMany(\n            targetEntity = Item.class,\n            mappedBy = \"invoice\",\n            cascade = CascadeType.ALL,\n            fetch = FetchType.LAZY\n    )\n    public List<Item> getItems(){\n        return items;\n    }\n    private void setId(int id){\n        this.id = id;\n    }\n    private void setNumber (String number){\n        this.number = number;\n    }\n    public void setItems (List<Item> items){\n        this.items = items;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Invoice.java	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Invoice.java	(date 1590264294732)
+@@ -1,7 +1,7 @@
+ package com.kodilla.hibernate.invoice;
+ 
+-import com.sun.istack.NotNull;
+ import javax.persistence.*;
++import javax.validation.constraints.NotNull;
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+Index: kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Item.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.kodilla.hibernate.invoice;\n\nimport com.sun.istack.NotNull;\n\nimport javax.persistence.*;\nimport java.math.BigDecimal;\n\n@Entity\n@Table(name=\"ITEMS\")\npublic class Item {\n    private int id;\n    private Product product;\n    private BigDecimal price;\n    private int quantity;\n    private BigDecimal value;\n    private Invoice invoice;\n\n    public Item(){\n    }\n\n    public Item(Product product, BigDecimal price, int quantity, BigDecimal value){\n        this.product = product;\n        this.price = price;\n        this.quantity = quantity;\n        this.value = value;\n    }\n    @Id\n    @GeneratedValue\n    @NotNull\n    @Column(name = \"ITEM_ID\", unique = true)\n    public int getId(){\n        return id;\n    }\n    @ManyToOne (cascade = CascadeType.ALL)\n    @JoinColumn (name = \"PRODUCT_ID\")\n    public Product getProduct(){\n        return product;\n    }\n    @Column(name = \"PRICE\")\n    public BigDecimal getPrice(){\n        return price;\n    }\n    @Column(name = \"QUANTITY\")\n    public int getQuantity(){\n        return quantity;\n    }\n    @Column(name = \"VALUE\")\n    public BigDecimal getValue(){\n        return value;\n    }\n    @ManyToOne (cascade = CascadeType.ALL)\n    @JoinColumn (name = \"INVOICE_ID\")\n    public Invoice getInvoice(){\n        return invoice;\n    }\n    private void setId(int id){\n        this.id = id;\n    }\n    public void setProduct(Product product){\n        this.product = product;\n    }\n    private void setPrice (BigDecimal price){\n        this.price = price;\n    }\n    private void setQuantity(int quantity){\n        this.quantity = quantity;\n    }\n    private void setValue (BigDecimal value){\n        this.value = value;\n    }\n    public void setInvoice(Invoice invoice){\n        this.invoice = invoice;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Item.java	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-hibernate/src/main/java/com/kodilla/hibernate/invoice/Item.java	(date 1590264294722)
+@@ -1,8 +1,7 @@
+ package com.kodilla.hibernate.invoice;
+ 
+-import com.sun.istack.NotNull;
+-
+ import javax.persistence.*;
++import javax.validation.constraints.NotNull;
+ import java.math.BigDecimal;
+ 
+ @Entity
+Index: kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/Company.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.kodilla.hibernate.manytomany;\n\nimport com.sun.istack.NotNull;\n\nimport javax.persistence.*;\nimport java.util.ArrayList;\nimport java.util.List;\n\n@NamedNativeQuery (\n        name = \"Company.retrieveCompaniesThreeLettersEqualsTo\",\n        query = \"SELECT * FROM COMPANIES WHERE SUBSTRING(Company_name, 1, 3)= :SUBSTRING\",\n        resultClass = Company.class\n)\n@Entity\n@Table(name=\"COMPANIES\")\npublic class Company {\n    private int id;\n    private String name;\n    private List<Employee> employees = new ArrayList<>();\n\n    public Company(){\n    }\n\n    public Company(String name){\n        this.name = name;\n    }\n    @Id\n    @GeneratedValue\n    @NotNull\n    @Column(name=\"COMPANY_ID\", unique=true)\n    public int getId(){\n        return id;\n    }\n    @NotNull\n    @Column(name=\"COMPANY_NAME\")\n    public String getName(){\n        return name;\n    }\n    @ManyToMany (cascade = CascadeType.ALL, mappedBy = \"companies\")\n    public List<Employee> getEmployees(){\n        return employees;\n    }\n\n    private void setId(int id){\n        this.id = id;\n    }\n    private void setName(String name){\n        this.name = name;\n    }\n    public void setEmployees(List<Employee> employees){\n        this.employees = employees;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/Company.java	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-hibernate/src/main/java/com/kodilla/hibernate/manytomany/Company.java	(date 1590092234559)
+@@ -1,8 +1,7 @@
+ package com.kodilla.hibernate.manytomany;
+ 
+-import com.sun.istack.NotNull;
+-
+ import javax.persistence.*;
++import javax.validation.constraints.NotNull;
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+Index: kodilla-hibernate/src/test/java/com/kodilla/hibernate/task/dao/TaskFinancialDetailsDaoTestSuite.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.kodilla.hibernate.task.dao;\n\nimport com.kodilla.hibernate.task.TaskFinancialDetails;\nimport org.junit.Assert;\nimport org.junit.Test;\nimport org.junit.runner.RunWith;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.boot.test.context.SpringBootTest;\nimport org.springframework.test.context.junit4.SpringRunner;\nimport java.math.BigDecimal;\nimport java.util.List;\n\n@RunWith(SpringRunner.class)\n@SpringBootTest\npublic class TaskFinancialDetailsDaoTestSuite {\n    @Autowired\n    TaskFinancialDetailsDao taskFinancialDetailsDao;\n\n    @Test\n    public void testFindByPaid() {\n        //Given\n        TaskFinancialDetails taskFinancialDetails =\n                new TaskFinancialDetails(new BigDecimal(115), false);\n        taskFinancialDetailsDao.save(taskFinancialDetails);\n        int id = taskFinancialDetails.getId();\n\n        //When\n        List<TaskFinancialDetails> resultList = taskFinancialDetailsDao.findByPaid(false);\n\n        //Then\n        Assert.assertEquals(1, resultList.size());\n\n        //CleanUp\n        taskFinancialDetailsDao.deleteById(id);\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-hibernate/src/test/java/com/kodilla/hibernate/task/dao/TaskFinancialDetailsDaoTestSuite.java	(revision d8dd78f39eb52939a716ec37c1a3142c9cb5dae1)
++++ kodilla-hibernate/src/test/java/com/kodilla/hibernate/task/dao/TaskFinancialDetailsDaoTestSuite.java	(date 1590309317340)
+@@ -16,7 +16,7 @@
+     @Autowired
+     TaskFinancialDetailsDao taskFinancialDetailsDao;
+ 
+-    @Test
++   @Test
+     public void testFindByPaid() {
+         //Given
+         TaskFinancialDetails taskFinancialDetails =
+diff --git kodilla-patterns2/.gradle/vcs-1/gc.properties kodilla-patterns2/.gradle/vcs-1/gc.properties
+deleted file mode 100644
+diff --git kodilla-patterns2/.gradle/6.3/gc.properties kodilla-patterns2/.gradle/6.3/gc.properties
+deleted file mode 100644

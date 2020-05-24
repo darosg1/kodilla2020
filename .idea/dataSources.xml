@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="@localhost:3306" uuid="55e56103-2f28-4182-bb65-626ca850be49">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/kodilla_course?serverTimezone=Europe/Warsaw&amp;useSSL=False</jdbc-url>
+    </data-source>
+  </component>
+</project>
