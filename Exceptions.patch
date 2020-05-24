@@ -1,0 +1,448 @@
+Index: Mockito/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Mockito/build.gradle	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ Mockito/build.gradle	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,17 @@
++plugins {
++    id 'java'
++}
++
++group 'com.kodilla'
++version '0.0.1-SNAPSHOT'
++
++sourceCompatibility = 1.8
++
++repositories {
++    mavenCentral()
++}
++
++dependencies {
++    testCompile group: 'junit', name: 'junit', version: '4.12'
++    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.10.0'
++}
+Index: Mockito/src/main/java/com/kodilla/testing/weather/stub/Temperatures.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Mockito/src/main/java/com/kodilla/testing/weather/stub/Temperatures.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ Mockito/src/main/java/com/kodilla/testing/weather/stub/Temperatures.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,7 @@
++package com.kodilla.testing.weather.stub;
++
++import java.util.HashMap;
++
++public interface Temperatures {
++    HashMap<Integer, Double> getTemperatures();
++}
+\ No newline at end of file
+Index: Mockito/src/main/java/com/kodilla/testing/weather/stub/WeatherForecast.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Mockito/src/main/java/com/kodilla/testing/weather/stub/WeatherForecast.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ Mockito/src/main/java/com/kodilla/testing/weather/stub/WeatherForecast.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,20 @@
++package com.kodilla.testing.weather.stub;
++
++import java.util.HashMap;
++import java.util.Map;
++
++public class WeatherForecast {
++    Temperatures temperatures;
++
++    public WeatherForecast(Temperatures temperatures) {
++        this.temperatures = temperatures;
++    }
++    public HashMap<Integer, Double> calculateForecast() {
++        HashMap<Integer, Double> resultMap = new HashMap<Integer, Double> ();
++        for (Map.Entry<Integer, Double> temperature :
++                temperatures.getTemperatures ().entrySet ()) {
++            resultMap.put ( temperature.getKey () , temperature.getValue () + 1 );
++        }
++        return resultMap;
++    }
++}
+Index: Mockito/src/test/java/com/kodilla/testing/weather/mock/WeatherForecastTestSuite.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Mockito/src/test/java/com/kodilla/testing/weather/mock/WeatherForecastTestSuite.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ Mockito/src/test/java/com/kodilla/testing/weather/mock/WeatherForecastTestSuite.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,34 @@
++package com.kodilla.testing.weather.mock;
++
++import com.kodilla.testing.weather.stub.Temperatures;
++import com.kodilla.testing.weather.stub.WeatherForecast;
++import org.junit.Assert;
++import org.junit.Test;
++import java.util.HashMap;
++
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
++
++public class WeatherForecastTestSuite {
++    @Test
++    public void testCalculateForecastWithMock() {
++        //Given
++        Temperatures temperaturesMock = mock(Temperatures.class);
++        HashMap<Integer, Double> temperaturesMap = new HashMap<Integer, Double>();
++        temperaturesMap.put(0, 25.5);
++        temperaturesMap.put(1, 26.2);
++        temperaturesMap.put(2, 24.8);
++        temperaturesMap.put(3, 25.2);
++        temperaturesMap.put(4, 26.1);
++
++        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
++
++        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
++
++        //When
++        int quantityOfSensors = weatherForecast.calculateForecast().size();
++
++        //Then
++        Assert.assertEquals(5, quantityOfSensors);
++    }
++}
+\ No newline at end of file
+Index: Mockito/src/test/java/com/kodilla/testing/weather/stub/TemperaturesStub.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Mockito/src/test/java/com/kodilla/testing/weather/stub/TemperaturesStub.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ Mockito/src/test/java/com/kodilla/testing/weather/stub/TemperaturesStub.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,19 @@
++package com.kodilla.testing.weather.stub;
++
++import java.util.HashMap;
++
++public class TemperaturesStub implements Temperatures {
++    @Override
++    public HashMap<Integer, Double> getTemperatures() {
++        HashMap<Integer, Double> stubResult = new HashMap<Integer, Double>();
++
++        // dummy data
++        stubResult.put(0, 25.5);
++        stubResult.put(1, 26.2);
++        stubResult.put(2, 24.8);
++        stubResult.put(3, 25.2);
++        stubResult.put(4, 26.1);
++
++        return stubResult;
++    }
++}
+\ No newline at end of file
+Index: Mockito/src/test/java/com/kodilla/testing/weather/stub/WeatherForecastTestSuite.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Mockito/src/test/java/com/kodilla/testing/weather/stub/WeatherForecastTestSuite.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ Mockito/src/test/java/com/kodilla/testing/weather/stub/WeatherForecastTestSuite.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,19 @@
++package com.kodilla.testing.weather.stub;
++
++import org.junit.Assert;
++import org.junit.Test;
++
++public class WeatherForecastTestSuite {
++    @Test
++    public void testCalculateForecastWithStub(){
++        //Given
++        Temperatures temperaturesMock = new TemperaturesStub();
++        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
++
++        //When
++        int quantityOfSensors = weatherForecast.calculateForecast().size();
++
++        //Then
++        Assert.assertEquals(5, quantityOfSensors);
++    }
++}
+\ No newline at end of file
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- gradle/wrapper/gradle-wrapper.properties	(revision 4e241192d3738759ca6d8a0f2866c5b6f003e325)
++++ gradle/wrapper/gradle-wrapper.properties	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -1,5 +1,6 @@
++#Mon Apr 13 15:40:41 CEST 2020
++distributionUrl=https\://services.gradle.org/distributions/gradle-6.0.1-all.zip
+ distributionBase=GRADLE_USER_HOME
+ distributionPath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-6.0.1-bin.zip
+-zipStoreBase=GRADLE_USER_HOME
+ zipStorePath=wrapper/dists
++zipStoreBase=GRADLE_USER_HOME
+Index: kodilla-exception/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-exception/build.gradle	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ kodilla-exception/build.gradle	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,14 @@
++plugins {
++    id 'java'
++}
++
++group 'com.kodilla'
++version '0.0.1-SNAPSHOT'
++
++repositories {
++    mavenCentral()
++}
++
++dependencies {
++    testCompile group: 'junit', name: 'junit', version: '4.12'
++}
+Index: kodilla-exception/src/main/java/com/kodilla/exception/index/IndexExceptionRunner.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-exception/src/main/java/com/kodilla/exception/index/IndexExceptionRunner.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ kodilla-exception/src/main/java/com/kodilla/exception/index/IndexExceptionRunner.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,18 @@
++package com.kodilla.exception.index;
++
++import java.util.List;
++
++public class IndexExceptionRunner {
++    public static void main(String[] args) {
++        VideoCollector videoCollector = new VideoCollector ();
++        List<String> collection = videoCollector.getCollection ();
++
++        if (collection.size () > 2) {
++            String movie = collection.get ( 0 );
++            System.out.println ( movie );
++
++            String anotherMovie = collection.get ( 1 );
++            System.out.println ( anotherMovie );
++        }
++    }
++}
+Index: kodilla-exception/src/main/java/com/kodilla/exception/index/VideoCollector.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-exception/src/main/java/com/kodilla/exception/index/VideoCollector.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ kodilla-exception/src/main/java/com/kodilla/exception/index/VideoCollector.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,12 @@
++package com.kodilla.exception.index;
++
++import java.util.ArrayList;
++import java.util.List;
++
++public class VideoCollector {
++    public List<String> getCollection(){
++        ArrayList<String> videos = new ArrayList<>();
++        videos.add("Extra movie");
++        return videos;
++    }
++}
+Index: kodilla-exception/src/main/java/com/kodilla/exception/io/FileReader.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-exception/src/main/java/com/kodilla/exception/io/FileReader.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ kodilla-exception/src/main/java/com/kodilla/exception/io/FileReader.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,21 @@
++package com.kodilla.exception.io;
++
++import java.io.File;
++import java.io.IOException;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++import java.util.stream.Stream;
++
++public class FileReader {
++    public void readFile() throws FileReaderException {
++        ClassLoader classLoader = getClass ().getClassLoader ();
++        File file = new File (classLoader.getResource ( "file/names.txt" ).getFile ());
++        try(Stream<String> fileLines = Files.lines (Paths.get(file.getPath ()))){
++            fileLines.forEach ( System.out::println );
++        } catch (IOException e){
++            throw new FileReaderException ();
++        } finally{
++            System.out.println ("I will be alyways here!");
++        }
++    }
++}
+Index: kodilla-exception/src/main/java/com/kodilla/exception/io/FileReaderException.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-exception/src/main/java/com/kodilla/exception/io/FileReaderException.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ kodilla-exception/src/main/java/com/kodilla/exception/io/FileReaderException.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,4 @@
++package com.kodilla.exception.io;
++
++public class FileReaderException extends Exception{
++}
+Index: kodilla-exception/src/main/java/com/kodilla/exception/io/FileReaderWithoutHandling.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-exception/src/main/java/com/kodilla/exception/io/FileReaderWithoutHandling.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ kodilla-exception/src/main/java/com/kodilla/exception/io/FileReaderWithoutHandling.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,17 @@
++package com.kodilla.exception.io;
++
++import java.io.File;
++import java.io.IOException;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++import java.util.stream.Stream;
++
++public class FileReaderWithoutHandling {
++    public void readFile() throws IOException {
++        ClassLoader classLoader = getClass().getClassLoader();
++        File file = new File (classLoader.getResource("file/names.txt").getFile());
++
++        Stream<String>fileLines = Files.lines(Paths.get(file.getPath()));
++        fileLines.forEach(System.out::println);
++    }
++}
+\ No newline at end of file
+Index: kodilla-exception/src/main/java/com/kodilla/exception/main/ExceptionModuleRunner.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-exception/src/main/java/com/kodilla/exception/main/ExceptionModuleRunner.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ kodilla-exception/src/main/java/com/kodilla/exception/main/ExceptionModuleRunner.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,16 @@
++package com.kodilla.exception.main;
++
++import com.kodilla.exception.io.FileReader;
++import com.kodilla.exception.io.FileReaderException;
++
++
++public class ExceptionModuleRunner{
++    public static void main(String []args) {
++        FileReader fileReader = new FileReader ();
++        try {
++            fileReader.readFile();
++        } catch (FileReaderException e){
++            System.out.println ("ddsds");
++        }
++    }
++}
+Index: kodilla-exception/src/main/java/com/kodilla/exception/nullpointer/MessageNotSendException.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-exception/src/main/java/com/kodilla/exception/nullpointer/MessageNotSendException.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ kodilla-exception/src/main/java/com/kodilla/exception/nullpointer/MessageNotSendException.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,7 @@
++package com.kodilla.exception.nullpointer;
++
++public class MessageNotSendException extends Exception{
++    public MessageNotSendException(final String message){
++        super(message);
++    }
++}
+Index: kodilla-exception/src/main/java/com/kodilla/exception/nullpointer/MessageSender.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-exception/src/main/java/com/kodilla/exception/nullpointer/MessageSender.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ kodilla-exception/src/main/java/com/kodilla/exception/nullpointer/MessageSender.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,12 @@
++package com.kodilla.exception.nullpointer;
++
++public class MessageSender {
++    public void sendMessageTo(User user , String message) throws MessageNotSendException{
++        if (user != null) {
++            System.out.println ( "Sending message" + message + "to" + user.getName () );
++        }else{
++            throw new MessageNotSendException ( "Object User was null" );
++        }
++    }
++}
++
+Index: kodilla-exception/src/main/java/com/kodilla/exception/nullpointer/NullPointerExceptionRunner.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-exception/src/main/java/com/kodilla/exception/nullpointer/NullPointerExceptionRunner.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ kodilla-exception/src/main/java/com/kodilla/exception/nullpointer/NullPointerExceptionRunner.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,14 @@
++package com.kodilla.exception.nullpointer;
++
++public class NullPointerExceptionRunner {
++    public static void main(String []args) {
++        User user = null;
++        MessageSender messageSender = new MessageSender ();
++        try {
++            messageSender.sendMessageTo ( user , "Hello" );
++        } catch (MessageNotSendException e) {
++            System.out.println ( "Message not send" + "but my program runs very well!" );
++        }
++        System.out.println ( "Processing other logic!" );
++    }
++}
+Index: kodilla-exception/src/main/java/com/kodilla/exception/nullpointer/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-exception/src/main/java/com/kodilla/exception/nullpointer/User.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ kodilla-exception/src/main/java/com/kodilla/exception/nullpointer/User.java	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,13 @@
++package com.kodilla.exception.nullpointer;
++
++public class User {
++    private String name;
++
++    public User(String name) {
++        this.name = name;
++    }
++
++    public String getName() {
++        return name;
++    }
++}
+Index: kodilla-exception/src/main/resources/file/names.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- kodilla-exception/src/main/resources/file/names.txt	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
++++ kodilla-exception/src/main/resources/file/names.txt	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -0,0 +1,4 @@
++Janusz
++Grażyna
++Sebastian
++Elwira
+\ No newline at end of file
+Index: settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- settings.gradle	(revision 4e241192d3738759ca6d8a0f2866c5b6f003e325)
++++ settings.gradle	(revision 2e274a6562db84ebfeef26ce8dc97afc409b8b32)
+@@ -6,4 +6,6 @@
+ include 'kodilla-patterns'
+ include 'kodilla-jdbc'
+ include 'kodilla-hibernate'
++include 'Mockito'
++include 'kodilla-exception'
+ 

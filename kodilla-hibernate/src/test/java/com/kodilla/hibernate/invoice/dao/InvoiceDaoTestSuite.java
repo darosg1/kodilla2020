@@ -9,22 +9,23 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
 import java.math.BigDecimal;
 import java.util.Optional;
 
-@RunWith (SpringRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class InvoiceDaoTestSuite {
     @Autowired
     InvoiceDao invoiceDao;
 
     @Test
-    public void testInvoiceDaoSave(){
+    public void testInvoiceDaoSave() {
         //Given
-        Invoice invoice = new Invoice ("04/04/2020");
-        Product product = new Product ("MS Office");
-        Item item1 = new Item (product, new BigDecimal ( 299 ), 1, new BigDecimal(299 ));
-        Item item2 = new Item (product, new BigDecimal ( 299), 2, new BigDecimal ( 598 ));
+        Invoice invoice = new Invoice("04/04/2020");
+        Product product = new Product("MS Office");
+        Item item1 = new Item(product, new BigDecimal(299), 1, new BigDecimal(299));
+        Item item2 = new Item(product, new BigDecimal(299), 2, new BigDecimal(598));
 
         invoice.getItems().add(item1);
         invoice.getItems().add(item2);
@@ -35,5 +36,5 @@ public class InvoiceDaoTestSuite {
         Assert.assertTrue(result.isPresent());
         //CleanUp
         invoiceDao.deleteById(invoice.getId());
-     }
+    }
 }

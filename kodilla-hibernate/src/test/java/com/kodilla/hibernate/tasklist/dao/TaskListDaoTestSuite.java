@@ -28,9 +28,9 @@ public class TaskListDaoTestSuite {
     @Test
     public void testTaskListDao() {
         //Given
-        TaskList taskList = new TaskList (LISTNAME, DESCRIPTION);
+        TaskList taskList = new TaskList(LISTNAME, DESCRIPTION);
         //When
-        taskListDao.save (taskList);
+        taskListDao.save(taskList);
         //Then
         int id = taskList.getId();
         Optional<TaskList> result = taskListDao.findById(id);
@@ -38,31 +38,33 @@ public class TaskListDaoTestSuite {
         //CleanUp
         taskListDao.deleteById(id);
     }
+
     @Test
-    public void testFindByListName(){
+    public void testFindByListName() {
         //Given
-        TaskList taskList = new TaskList (LISTNAME, DESCRIPTION);
+        TaskList taskList = new TaskList(LISTNAME, DESCRIPTION);
         taskListDao.save(taskList);
         String listName1 = taskList.getListName();
         //When
         List<TaskList> result = taskListDao.findByListName(listName1);
         //Then
-        Assert.assertEquals (1, result.size());
+        Assert.assertEquals(1, result.size());
         //CleanUp
         int id = result.get(0).getId();
-        taskListDao.deleteById (id);
+        taskListDao.deleteById(id);
     }
-  @Test
-  public void testTaskListDaoSaveWithTasks(){
+
+    @Test
+    public void testTaskListDaoSaveWithTasks() {
         //Given
         Task task = new Task("Test: Learn Hibernate", 14);
-        Task task2 = new Task ("Test: Write some entities", 3);
-        TaskFinancialDetails tfd = new TaskFinancialDetails (new BigDecimal (20), false);
-        TaskFinancialDetails tfd2 = new TaskFinancialDetails (new BigDecimal (10), false);
-        task.setTaskFinancialDetails (tfd);
-        task2.setTaskFinancialDetails (tfd2);
+        Task task2 = new Task("Test: Write some entities", 3);
+        TaskFinancialDetails tfd = new TaskFinancialDetails(new BigDecimal(20), false);
+        TaskFinancialDetails tfd2 = new TaskFinancialDetails(new BigDecimal(10), false);
+        task.setTaskFinancialDetails(tfd);
+        task2.setTaskFinancialDetails(tfd2);
 
-        TaskList taskList = new TaskList (LISTNAME,"ToDo tasks");
+        TaskList taskList = new TaskList(LISTNAME, "ToDo tasks");
         taskList.getTasks().add(task);
         taskList.getTasks().add(task2);
         task.setTaskList(taskList);
@@ -75,6 +77,7 @@ public class TaskListDaoTestSuite {
         //CleanUp
         taskListDao.deleteById(id);
     }
+
     @Test
     public void testNamedQueries() {
         //Given
@@ -111,14 +114,14 @@ public class TaskListDaoTestSuite {
         List<Task> longTasks = taskDao.retrieveLongTasks();
         List<Task> shortTasks = taskDao.retrieveShortTasks();
         List<Task> enoughTimeTasks = taskDao.retrieveTasksWithEnoughTime();
-        List<Task>durationLongerThanTasks = taskDao.retrieveTasksWithDurationLongerThan(6);
+        List<Task> durationLongerThanTasks = taskDao.retrieveTasksWithDurationLongerThan(6);
 
         //Then
         try {
             Assert.assertEquals(1, longTasks.size());
             Assert.assertEquals(3, shortTasks.size());
             Assert.assertEquals(3, enoughTimeTasks.size());
-            Assert.assertEquals (2, durationLongerThanTasks.size());
+            Assert.assertEquals(2, durationLongerThanTasks.size());
         } finally {
             //CleanUp
             taskListDao.deleteById(id);

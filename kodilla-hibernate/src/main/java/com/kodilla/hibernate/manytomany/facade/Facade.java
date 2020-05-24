@@ -17,10 +17,12 @@ public class Facade {
         this.companyDao = companyDao;
         this.employeeDao = employeeDao;
     }
-    public List<Company> retrieveCompaniesNamedAs(String arg){
+
+    public List<Company> retrieveCompaniesNamedAs(String arg) {
         return companyDao.retrieveCompaniesNamedAs(arg);
     }
-    public List<Employee> retrieveEmployeesNamedAs(String arg){
+
+    public List<Employee> retrieveEmployeesNamedAs(String arg) {
         return employeeDao.retrieveEmployeesNamedAs(arg);
     }
 }

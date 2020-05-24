@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -24,11 +25,11 @@ public class FacadeTestSuite {
     Facade facade;
 
     @Test
-    public void retrieveCompaniesNamedAsTest(){
+    public void retrieveCompaniesNamedAsTest() {
         //Given
-        Company softwareMachine = new Company ("Software Machine");
-        Company dataMaesters = new Company ("Data Maesters");
-        Company greymatter = new Company ("Grey Matter");
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greymatter = new Company("Grey Matter");
         companyDao.save(softwareMachine);
         companyDao.save(dataMaesters);
         companyDao.save(greymatter);
@@ -39,8 +40,9 @@ public class FacadeTestSuite {
         //Cleanup
         companyDao.deleteAll();
     }
+
     @Test
-    public void retrieveEmployeesNamedAsTest(){
+    public void retrieveEmployeesNamedAsTest() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");

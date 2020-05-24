@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-@RunWith (SpringRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
     @Autowired
@@ -20,15 +20,15 @@ public class CompanyDaoTestSuite {
     EmployeeDao employeeDao;
 
     @Test
-    public void testSaveManyToMany(){
+    public void testSaveManyToMany() {
         //Given
-        Employee johnSmith = new Employee ("John", "Smith");
-        Employee stephanieClarckson = new Employee ("Stephanie", "Clarckson");
-        Employee lindaKovalsky = new Employee ("Linda", "Kovalsky");
+        Employee johnSmith = new Employee("John", "Smith");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
-        Company softwareMachine = new Company ("Software Machine");
-        Company dataMaesters = new Company ("Data Maesters");
-        Company greymatter = new Company ("Grey Matter");
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greymatter = new Company("Grey Matter");
 
         softwareMachine.getEmployees().add(johnSmith);
         dataMaesters.getEmployees().add(stephanieClarckson);
@@ -53,20 +53,21 @@ public class CompanyDaoTestSuite {
         Assert.assertNotEquals(0, dataMaestersId);
         Assert.assertNotEquals(0, greymatterId);
         //CleanUp
-        try{
-          companyDao.deleteById(softwareMachineIdID);
-          companyDao.deleteById(dataMaestersId);
-          companyDao.deleteById(greymatterId);
-        } catch (Exception e){
-        //do  nothing
+        try {
+            companyDao.deleteById(softwareMachineIdID);
+            companyDao.deleteById(dataMaestersId);
+            companyDao.deleteById(greymatterId);
+        } catch (Exception e) {
+            //do  nothing
         }
     }
+
     @Test
-    public void testRetrieveEmployeesByLastname(){
+    public void testRetrieveEmployeesByLastname() {
         //Given
-        Employee johnSmith = new Employee ("John", "Smith");
-        Employee stephanieClarckson = new Employee ("Stephanie", "Clarckson");
-        Employee lindaKovalsky = new Employee ("Linda", "Kovalsky");
+        Employee johnSmith = new Employee("John", "Smith");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
         employeeDao.save(johnSmith);
         int nameId = johnSmith.getId();
@@ -75,20 +76,21 @@ public class CompanyDaoTestSuite {
         employeeDao.save(lindaKovalsky);
         int name3Id = lindaKovalsky.getId();
         //When
-        List<Employee> employees = employeeDao.retrieveEmployeesByLastname ("CLARCKSON");
+        List<Employee> employees = employeeDao.retrieveEmployeesByLastname("CLARCKSON");
         //Then
-        Assert.assertEquals ( 1, employees.size());
+        Assert.assertEquals(1, employees.size());
         //CleanUp
         employeeDao.deleteById(nameId);
         employeeDao.deleteById(name2Id);
         employeeDao.deleteById(name3Id);
     }
+
     @Test
-    public void testRetrieveCompaniesThreeLettersEqualsTo(){
+    public void testRetrieveCompaniesThreeLettersEqualsTo() {
         //Given
-        Company softwareMachine = new Company ("Software Machine");
-        Company dataMaesters = new Company ("Data Maesters");
-        Company greymatter = new Company ("Grey Matter");
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greymatter = new Company("Grey Matter");
 
         companyDao.save(softwareMachine);
         int companyId = softwareMachine.getId();
@@ -97,12 +99,12 @@ public class CompanyDaoTestSuite {
         companyDao.save(greymatter);
         int company3Id = greymatter.getId();
         //When
-        List<Company> companies = companyDao.retrieveCompaniesThreeLettersEqualsTo ("Dat");
+        List<Company> companies = companyDao.retrieveCompaniesThreeLettersEqualsTo("Dat");
         //Then
         Assert.assertEquals(1, companies.size());
         //CleanUp
-        companyDao.deleteById (companyId);
-        companyDao.deleteById (company2Id);
-        companyDao.deleteById (company3Id);
+        companyDao.deleteById(companyId);
+        companyDao.deleteById(company2Id);
+        companyDao.deleteById(company3Id);
     }
 }
