@@ -1,8 +1,7 @@
 package com.kodilla.hibernate.invoice;
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Entity

@@ -16,7 +16,7 @@ public class TaskFinancialDetailsDaoTestSuite {
     @Autowired
     TaskFinancialDetailsDao taskFinancialDetailsDao;
 
-    @Test
+   @Test
     public void testFindByPaid() {
         //Given
         TaskFinancialDetails taskFinancialDetails =

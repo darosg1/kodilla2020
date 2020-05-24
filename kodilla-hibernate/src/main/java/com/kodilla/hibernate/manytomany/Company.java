@@ -1,8 +1,7 @@
 package com.kodilla.hibernate.manytomany;
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +9,10 @@ import java.util.List;
         name = "Company.retrieveCompaniesThreeLettersEqualsTo",
         query = "SELECT * FROM COMPANIES WHERE SUBSTRING(Company_name, 1, 3)= :SUBSTRING",
         resultClass = Company.class
+)
+@NamedQuery(
+        name = "Company.retrieveCompaniesNamedAs",
+        query = "FROM COMPANIES WHERE Company_name LIKE:ARG"
 )
 @Entity
 @Table(name="COMPANIES")
