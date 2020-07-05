@@ -6,10 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import java.util.stream.Collectors;
-
-@Aspect
 @Component
+@Aspect
 public class OrderFacadeWatcher {
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderFacadeWatcher.class);
 
